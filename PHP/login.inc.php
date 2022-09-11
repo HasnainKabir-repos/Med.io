@@ -8,7 +8,7 @@ if(isset($_POST["login-submit"])){
     $password = $_POST['password'];
 
     if(empty($email) || empty($password)){
-        header("Location: ../Login.html?error=emptyfields&mail=".$email);
+        header("Location: ../Login.php?error=emptyfields&mail=".$email);
         exit();
     }
 
@@ -18,7 +18,7 @@ if(isset($_POST["login-submit"])){
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)){
-            header("Location: ../Login.html?error=sqlerror");
+            header("Location: ../Login.php?error=sqlerror");
             exit();
         }
 
@@ -35,7 +35,7 @@ if(isset($_POST["login-submit"])){
 
                 if($password_check == false){
 
-                    header("Location: ../Login.html?error=wrongpassword");
+                    header("Location: ../Login.php?error=wrongpassword");
                     exit();
 
                 }
@@ -45,7 +45,7 @@ if(isset($_POST["login-submit"])){
                     $_SESSION['patientID'] = $row['ID'];
                     $_SESSION['patientEmail'] = $row['Email'];
 
-                    header("Location: ../Login.html?login=success");
+                    header("Location: ../patient_portal.php?login=success");
                     exit();
 
                 }
@@ -53,7 +53,7 @@ if(isset($_POST["login-submit"])){
             }else{
 
 
-                header("Location: ../Login.html?error=emailnotfound");
+                header("Location: ../Login.php?error=emailnotfound");
                 exit();
 
             }
@@ -61,7 +61,7 @@ if(isset($_POST["login-submit"])){
     }
 
 }else{
-    header("Location: ../Login.html");
+    header("Location: ../Login.php");
     exit();
 }
 

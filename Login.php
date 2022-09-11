@@ -5,12 +5,12 @@
 <html>
     <head>
         <title>
-
+            Login
         </title>
     </head>
 
     <body>
-        <form class="form-login" action="PHP/login.php" method = "post">
+        <form class="form-login" action="PHP/login.inc.php" method = "post">
 
         <!--Email-->
             <label for="email">Email</label><br>
@@ -23,8 +23,10 @@
         <!--Login-->
             <button type="submit" name="login-submit" id ="login-submit">Sign In</button>
         
-        <!--Signup-->
-            <button type="submit" name="signup-page" id ="signup-page">Sign Up</button>
+        </form>
+        
+        <form action="signup.php">
+            <button type="submit" name="login-page-signup-button">Sign Up</button>
         </form>
     </body>
 </html>

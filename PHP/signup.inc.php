@@ -19,17 +19,17 @@ if(isset($_POST["signup-submit"])){
 
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
     empty($gender) ||empty($age) ||empty($place_of_birth)){
-        header("Location: ../signup.html?error=emptyfields&name=".$name."&mail=".$email);
+        header("Location: ../signup.php?error=emptyfields&name=".$name."&mail=".$email);
         exit();
     }
 
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        header("Location: ../signup.html?error=invalidmail&name=".$name);
+        header("Location: ../signup.php?error=invalidmail&name=".$name);
         exit();
     }
     
     elseif($password !== $conf_password){
-        header("Location: ../signup.html?error=passwordcheck&name=".$name. "&mail=".$email);
+        header("Location: ../signup.php?error=passwordcheck&name=".$name. "&mail=".$email);
         exit();
     }
 
@@ -59,7 +59,7 @@ if(isset($_POST["signup-submit"])){
         
                 if(!mysqli_stmt_prepare($statement, $sql)){
                     $err = mysqli_stmt_error($statement);
-                    header("Location: ../signup.html?error=sqlerror".$err);
+                    header("Location: ../signup.php?error=sqlerror".$err);
                     exit();
                 }
                 else{
@@ -69,7 +69,7 @@ if(isset($_POST["signup-submit"])){
                     mysqli_stmt_bind_param($statement, "sssssssss", $name, $email, $hashed_password,
                                         $gender, $date_of_birth, $age, $place_of_birth, $med_history, $vaccination);
                     mysqli_stmt_execute($statement);
-                    header("Location: ../signup.html?signup=success");
+                    header("Location: ../signup.php?signup=success");
                     exit();
                 }
             }

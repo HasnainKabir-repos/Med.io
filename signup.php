@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +11,7 @@
 
     <body>
         <!--Signup information-->
-        <form class="form-signup" action="./PHP/signup.php" method="post">
+        <form class="form-signup" action="./PHP/signup.inc.php" method="post">
             <!--Name-->
             <label for="name">Full Name*</label><br>
             <input type="text" id="name" name = "name"><br>
