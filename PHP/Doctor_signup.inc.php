@@ -30,11 +30,11 @@ if(isset($_POST["Doctor_signup-submit"])){
     }
 
     else{
-        $sql = "SELECT Email FROM Doctor WHERE Email=?";
+        $sql = "SELECT Email FROM TempDoctor WHERE Email=?";
         $statement = mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($statement, $sql)){
-            header("Location: ../Doctor_signup.html?error=sqlerror1");
+            header("Location: ../Doctor_signup.php?error=sqlerror1");
             exit();
         }
         else{
@@ -44,7 +44,7 @@ if(isset($_POST["Doctor_signup-submit"])){
             $result_check = mysqli_stmt_num_rows($statement);
 
             if($result_check>0){
-                header("Location: ../Doctor_signup.html?error=emailtaken&name=".$email);
+                header("Location: ../Doctor_signup.php?error=emailtaken&name=".$email);
             }
             
             else{

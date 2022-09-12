@@ -38,7 +38,7 @@ if(isset($_POST["signup-submit"])){
         $statement = mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($statement, $sql)){
-            header("Location: ../signup.html?error=sqlerror1");
+            header("Location: ../signup.php?error=sqlerror1");
             exit();
         }
         else{
@@ -48,7 +48,7 @@ if(isset($_POST["signup-submit"])){
             $result_check = mysqli_stmt_num_rows($statement);
 
             if($result_check>0){
-                header("Location: ../signup.html?error=emailtaken&name=".$email);
+                header("Location: ../signup.php?error=emailtaken&name=".$email);
             }
             
             else{
