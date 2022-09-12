@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <form class="form-login" action="PHP/login.inc.php" method = "post">
+        <form class="form-login" action="PHP/Doctor_login.inc.php" method = "post">
 
         <!--Email-->
             <label for="email">Email</label><br><br>
@@ -20,10 +20,11 @@
             <label for="password">Password</label><br><br>
             <input type="password" id = "password" name="password"><br><br>
 
-        <!--Login-->
-            <button type="submit" name="login-submit" id ="login-submit">Sign In</button><br>
+          <!--Login-->
+            <button type="submit" name="login-submit" id ="login-submit">Sign In</button>
         
         </form>
+
         <h3>Don't have an Account? Sign Up now!
             </h3>
         
