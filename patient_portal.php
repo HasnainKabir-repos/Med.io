@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
         <title></title>
 
         <form action="PHP/login.inc.php" method="post">
