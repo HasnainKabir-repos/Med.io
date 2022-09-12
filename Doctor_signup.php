@@ -11,7 +11,7 @@
 
     <body>
         <!--Signup information-->
-        <form class="form-signup" action="./PHP/Doctor_signup.inc.php" method="post">
+        <form class="Doctor_form-signup" action="./PHP/Doctor_signup.inc.php" method="post">
             <!--Name-->
             <label for="name">Full Name*</label><br>
             <input type="text" id="name" name = "name"><br>
@@ -51,16 +51,13 @@
             <label for="birth_place">Place Of Birth*</label><br>
             <input type="text" name="birth_place" id="birth_place"><br>
 
-            <!--Degree-->
- 
-            <label for="Degree">Degree</label><br>
-            <input type="text" name="Degree" id="Degree"><br>
+    
 
             <!--Instituition-->
  
 
-            <label for="Instituition">Instituition</label><br>
-            <input type="text" name="Instituition" id="Instituition"><br>
+            <label for="Instituitional_background">Instituition</label><br>
+            <input type="text" name="Instituitional_background" id="Instituitional_background"><br>
 
               <!--Department-->
  
@@ -70,7 +67,7 @@
             
 
             <!--Signup Button-->
-            <button type="submit" name = "signup-submit" id="signup-submit">Submit</button>
+            <button type="submit" name = "Doctor_signup-submit" id="Doctor_signup-submit">Submit</button>
         </form>
     </body>
 </html>
