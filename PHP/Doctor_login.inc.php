@@ -52,7 +52,6 @@ if(isset($_POST["Doctor_login-submit"])){
 
             }else{
 
-
                 header("Location: ../Doctor_login.php?error=emailnotfound");
                 exit();
 
