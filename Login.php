@@ -22,8 +22,12 @@
             <input type="password" id = "password" name="password"><br><br>
 
         <!--Login-->
-            <button type="submit" name="login-submit" id ="login-submit">Sign In</button><br>
+            <button type="submit" name="login-submit" id ="login-submit">Sign In</button><br><br>
+            
         
+        </form>
+        <form action="Recover_Password.php">
+            <button type="submit" name="forgot_Password">Forgot Password</button>
         </form>
         <h3>Don't have an Account? Sign Up now!
             </h3>
