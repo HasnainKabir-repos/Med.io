@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 
     <!--CSS FILE--->
-    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -47,6 +47,7 @@
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctors</a></li>
+          <li><a class="nav-link logout" href="Doctor_portal.php">Doctors</a></li>
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Show All Departments</a></li>
