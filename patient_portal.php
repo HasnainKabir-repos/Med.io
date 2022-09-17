@@ -47,7 +47,7 @@
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctors</a></li>
-          <li><a class="nav-link logout" href="Doctor_portal.php">Doctors</a></li>
+
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Show All Departments</a></li>
@@ -69,6 +69,8 @@
       </nav>
 
         <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+        <a href="assets/logout.php" class="appointment-btn scrollto" id="logout-btn">Logout</a>
+        </div>
     </header>
 
     <!--Cover-->
@@ -176,7 +178,7 @@
             <div class="error-message"></div>
             <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
           </div>
-          <div class="text-center"><button type="appointment-submit">Make an Appointment</button></div>
+          <div class="text-center"><button type="appointment-submit" name="appointment-submit" >Make an Appointment</button></div>
           </form>
 
 
@@ -189,6 +191,7 @@
 
 
     </main>
+    <script src="assets/js/patient_portal_script.js"></script>
     </body>
 </html>
 

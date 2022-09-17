@@ -1,12 +1,9 @@
 <?php
     session_start();
-
-    if (!isset($_POST["appointment-submit"])) {
-        $ID = $_SESSION['patientID'];
-        $email = $_SESSION['patientEmail'];
-
-        if(empty($email) || empty($ID)){
-            header("Location: ../patient_portal.php?error=notloggedin");
+   
+    if (isset($_POST["appointment-submit"])) {
+        if(!(isset($_SESSION['patientloggedin']))){
+            header("Location: ../Login.php?error=notloggedin");
             exit();
         }
     }

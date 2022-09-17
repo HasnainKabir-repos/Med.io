@@ -44,6 +44,7 @@ if(isset($_POST["login-submit"])){
                     session_start();
                     $_SESSION['patientID'] = $row['ID'];
                     $_SESSION['patientEmail'] = $row['Email'];
+                    $_SESSION['patientloggedin'] = true;
 
                     header("Location: ../patient_portal.php?login=success");
                     exit();
