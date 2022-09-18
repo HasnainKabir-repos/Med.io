@@ -7,7 +7,7 @@ if(isset($_POST["Admin_login-submit"])){
     $user = $_POST['user'];
     $password = $_POST['password'];
 
-    if(empty($user) || empty($password)){
+        if(empty($user) || empty($password)){
         header("Location: ../admin_login.php?error=emptyfields&mail=".$user);
         exit();
     }

@@ -65,7 +65,7 @@ if(isset($_POST["Doctor_signup-submit"])){
                     mysqli_stmt_bind_param($statement, "sssssssss", $name, $email, $hashed_password,
                                         $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background);
                     mysqli_stmt_execute($statement);
-                    header("Location: ../Doctor_signup.php?approval_pending");
+                    header("Location: ../Doctor_login.php?approval_pending");
                     exit();
                 }
             }
