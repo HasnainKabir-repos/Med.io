@@ -140,7 +140,7 @@
             <h2>Make an appointment</h2>
           </div>
 
-          <form action="./PHP/patient_portal_inc.php" method="post" class="appointment-form">
+          <form action="./PHP/patient_portal.inc.php" method="post" class="appointment-form">
             <div class="row">
 
               <div class="col-md-5 form-group mt-2">
