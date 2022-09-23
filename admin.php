@@ -15,7 +15,7 @@
             if(isset($_SESSION['adminUser'])){
                 echo '<h3>Welcome</h3>';
             }else{
-                echo '<h3>LoginFailed</h3>';
+                echo '<h3>Login Failed</h3>';
             }
         ?>
     </body>

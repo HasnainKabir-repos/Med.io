@@ -26,8 +26,6 @@ if(isset($_POST["Recover_password"])){
 
             mysqli_stmt_bind_param($statement, "s", $email);
             mysqli_stmt_execute($statement);
-
-
             }
         }
     }

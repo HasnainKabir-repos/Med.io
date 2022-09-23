@@ -4,26 +4,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-        <title>
-            Admin Login
-        </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content = "width-device-width initial-scale=1" >
+    <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+        <title>Admin Login Page</title>
     </head>
+    <body style="background-image: url(assets/images/admin_login_background.jpg); background-repeat:no-repeat; background-size: cover;">
+        <div style="margin-top : 60px;"></div>
 
-    <body>
-        <form class="Admin_form-login" action="PHP/Admin_login.inc.php" method = "post">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    
+                    <div class="col-md-6 jumbotron">
+                    <form class="Admin_form-login" action="./PHP/Admin_login.inc.php" method = "post">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="Enter Username">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="pass" class="form-control" placeholder="Enter Password">
+                            </div>
 
-        <!--Email-->
-            <label for="user">UserName</label><br><br>
-            <input type="text" id = "user" name = "user"><br><br>
+                            <div style="margin-top : 30px;"></div>
 
-        <!--Password-->
-            <label for="password">Password</label><br><br>
-            <input type="password" id = "password" name="password"><br><br>
+                            <button type="submit" name="Admin_login-submit" id="Admin_login-submit" class="btn btn-success">Log In</button>
 
-        <!--Login-->
-            <button type="submit" name="Admin_login-submit" id ="Admin_login-submit">Sign In</button><br>
-        
-        </form>
+                        </form>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

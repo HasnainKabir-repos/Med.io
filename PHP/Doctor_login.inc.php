@@ -34,13 +34,11 @@ if(isset($_POST["Doctor_login-submit"])){
                 $password_check = password_verify($password, $row['Password']);
 
                 if($password_check == false){
-
                     header("Location: ../Doctor_login.php?error=wrongpassword");
                     exit();
 
                 }
                 else if($password_check == true){
-
                     session_start();
                     $_SESSION['DoctorID'] = $row['ID'];
                     $_SESSION['DoctorEmail'] = $row['Email'];

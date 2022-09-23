@@ -358,7 +358,7 @@ section{
   }
 }
 
-.navbar-mobile {
+.navbar-mobile{
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -370,13 +370,13 @@ section{
   z-index: 999;
 }
 
-.navbar-mobile .mobile-nav-toggle {
+.navbar-mobile .mobile-nav-toggle{
   position: absolute;
   top: 15px;
   right: 15px;
 }
 
-.navbar-mobile ul {
+.navbar-mobile ul{
   display: block;
   position: absolute;
   top: 55px;
@@ -389,12 +389,12 @@ section{
   transition: 0.3s;
 }
 
-.navbar-mobile>ul>li {
+.navbar-mobile>ul>li{
   padding: 0;
 }
 
 .navbar-mobile a,
-.navbar-mobile a:focus {
+.navbar-mobile a:focus{
   padding: 10px 20px;
   font-size: 15px;
   color: #2c4964;
@@ -403,12 +403,12 @@ section{
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover>a{
   color:  #2596be;
 }
 
 .navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
+.navbar-mobile .getstarted:focus{
   margin: 15px;
 }
 

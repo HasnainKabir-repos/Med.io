@@ -55,8 +55,6 @@ if(isset($_POST["Admin_login-submit"])){
                 }
 
             }else{
-
-
                 header("Location: ../admin_login.php?error=usernotfound");
                 exit();
 
