@@ -13,7 +13,6 @@ if(isset($_POST["Admin_login-submit"])){
     }
 
     else{
-
         $sql = "SELECT * FROM admin WHERE User=? ";
         $statement = mysqli_stmt_init($conn);
 
