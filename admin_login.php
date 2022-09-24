@@ -28,11 +28,11 @@
                     <form class="Admin_form-login" action="./PHP/Admin_login.inc.php" method = "post">
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="Enter Username">
+                                <input type="text" name="user" class="form-control" autocomplete="off" placeholder="Enter Username">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="pass" class="form-control" placeholder="Enter Password">
+                                <input type="password" name="password" class="form-control" placeholder="Enter Password">
                             </div>
 
                             <div style="margin-top : 30px;"></div>

@@ -51,7 +51,7 @@
           <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctors</a></li>
   
 <!--Admin Portal Added at the Navbar by Mukit-->
-          <li><a class="nav-link scrollto" href="/admin_login.php">Admin</a></li>
+          <li><a class="nav-link scrollto" href="admin_login.php">Admin</a></li>
 
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
