@@ -32,35 +32,32 @@ if(isset($_POST["Admin_login-submit"])){
                 
                 if($password == $row['Password']){
                     $password_check = true;
-                }else{
+                }
+                else{
                     $password_check = false;
                 }
 
                 if($password_check == false){
-
                     header("Location: ../admin_login.php?error=wrongpassword");
                     exit();
-
                 }
                 else if($password_check == true){
-
                     session_start();
                     $_SESSION['adminUser'] = $row['User'];
                     $_SESSION['adminPassword'] = $row['Password'];
 
-                    header("Location: ../admin.php?login=success");
+                    header("Location: ../admin/index.php");
                     exit();
-
                 }
-
-            }else{
+            }
+            else{
                 header("Location: ../admin_login.php?error=usernotfound");
                 exit();
-
             }
         }
     }
-}else{
+}
+else{
     header("Location: ../admin_login.php");
     exit();
 }
