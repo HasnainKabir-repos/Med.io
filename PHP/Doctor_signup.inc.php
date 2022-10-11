@@ -1,5 +1,15 @@
 <?php
 
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/Doctor_signup.php';</script>";
+}
+function function_alert2($message) {
+      
+    // Display the alert box 
+    echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/Doctor_login.php';</script>";
+}
 if(isset($_POST["Doctor_signup-submit"])){
     require '../SQL/dbConnect.php';
 
@@ -16,17 +26,14 @@ if(isset($_POST["Doctor_signup-submit"])){
 
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
     empty($gender) ||empty($age) ||empty($place_of_birth)||empty($Instituitional_background)||empty($Department)){
-        header("Location: ../Doctor_signup.php?error=emptyfields&name=".$name."&mail=".$email);
-        exit();
+        
     }
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        header("Location: ../Doctor_signup.php?error=invalidmail&name=".$name);
-        exit();
+        function_alert("Empty fields");
     }
     
     elseif($password !== $conf_password){
-        header("Location: ../Doctor_signup.php?error=passwordcheck&name=".$name. "&mail=".$email);
-        exit();
+        function_alert("Passwords do not match");
     }
 
     else{
@@ -44,7 +51,7 @@ if(isset($_POST["Doctor_signup-submit"])){
             $result_check = mysqli_stmt_num_rows($statement);
 
             if($result_check>0){
-                header("Location: ../Doctor_signup.php?error=emailtaken&name=".$email);
+                function_alert("Email Taken");
             }
             
             else{
@@ -65,15 +72,14 @@ if(isset($_POST["Doctor_signup-submit"])){
                     mysqli_stmt_bind_param($statement, "sssssssss", $name, $email, $hashed_password,
                                         $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background);
                     mysqli_stmt_execute($statement);
-                    header("Location: ../Doctor_login.php?approval_pending");
-                    exit();
+                    function_alert2("Approval Pending");
                 }
             }
         }
     }
 
     mysqli_stmt_close($statement);
-    mysqli_close($conn);
+    mysqli_close($conn); 
 
 }
 else
