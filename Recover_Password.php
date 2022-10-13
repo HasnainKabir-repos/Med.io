@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <form class="RecoverPassword" action="PHP/forgotPassword.php" method = "post">
+        <form class="RecoverPassword" action="./PHP/forgotPassword.php" method = "post">
 
         <!--Email-->
             <label for="email">Email</label><br><br>
@@ -19,7 +19,7 @@
 
 
         <!--Recover-->
-            <button type="submit" name="Recover_password" id ="Recover_password">Recover</button><br><br>
+            <button type="submit" name="recover_password" id ="recover_password">Recover</button><br><br>
         
         </form>
 
