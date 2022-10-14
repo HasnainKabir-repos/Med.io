@@ -32,7 +32,6 @@ session_start();
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Admin</a></li>
                     <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
             </ul>
         </nav>
@@ -102,7 +101,7 @@ session_start();
                                     <div class="col-md-8">
                                         <h5 class="my-2 text-white" style="font-size:30px;">0</h5>
                                         <h5 class="text-white">Total</h5>
-                                        <h5 class="text-white">Patient</h5>
+                                        <h5 class="text-white">Appointments</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="#"><i class="fa fa-solid fa-hospital-user fa-3x my-4" style="color:azure;"></i></a>

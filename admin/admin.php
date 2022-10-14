@@ -5,7 +5,7 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Manage Admins</title>
         
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
@@ -54,7 +54,6 @@ error_reporting(0);
                                     <h5 class="text-center">All Admin</h5>
 
                                     <?php
-                            
                                      $ad = $_SESSION['admin'];
                                      $query = "SELECT * FROM admin WHERE User !='$ad'";
                                      $res = mysqli_query($conn,$query);
@@ -71,24 +70,25 @@ error_reporting(0);
 
                                      while($row = mysqli_fetch_array($res)){
                                         $user = $row['User'];
-                                        $output .='
+                                        $output .="
                                         <tr>
-                                            <td>'.$user.'</td>
+                                            <td>$user</td>
                                             <td>
-                                                <a href="admin?user='.$user.'"><button id='.$user.' class="btn btn-danger remove">Remove</button></a>
-                                            </td>';
+                                                <a href='admin?user=$user'><button user='$user' class='btn btn-danger remove'>Remove</button></a>
+                                            </td>";
                                      }
                                      $output .="
-                                     </tr>
+                                        </tr>
                                      </table>";
 
                                      echo $output;
 
-                                     if(isset($_GET['User'])){
-                                        $user = $_GET['User'];
+                                     if(isset($_GET['user'])){
+                                        $user = $_GET['user'];
 
                                         $query = "DELETE FROM admin WHERE User='$user'";
                                         mysqli_query($conn,$query);
+                                        header("Location: ../admin/admin.php");
                                      }
                                     ?>
             
@@ -114,13 +114,14 @@ error_reporting(0);
                                     if(count($error)==0){
                                         $q = "INSERT INTO admin(User,Password) VALUES('$user','$password')";
                                         $result = mysqli_query($conn,$q);
+                                        header("Location: ../admin/admin.php");
                                     }
                                 }
 
                                 if(isset($error['u'])){
                                     $er = $error['u'];
 
-                                    $show = "<h5 class='text-center alert alert-danger'>$er</h5>";
+                                    $show = "<h6 class='text-center alert alert-danger'>$er</h6>";
                                 }
                                 else{
                                     $show = "";
@@ -128,13 +129,16 @@ error_reporting(0);
                                 ?>
                                     <h5 class="text-center">Add Admin</h5>
                                     <form method="post" enctype="multipart/form-data">
+                                        <div>
+                                            <?php echo $show; ?>
+                                        </div>
                                         <div class="form-group">
                                             <label>Username</label>
-                                            <input type="text" name="user" class="form-control">
+                                            <input type="text" name="user" class="form-control" placeholder="Enter Admin Username">
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="password" name="password" class="form-control">
+                                            <input type="password" name="password" class="form-control" placeholder="Enter Admin Password">
                                         </div>
                                         <input type="submit" name="add" value="Add New Admin" class="btn btn-success">
                                     </form>
