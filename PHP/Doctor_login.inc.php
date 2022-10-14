@@ -1,5 +1,11 @@
 <?php
 
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/Doctor_login.php';</script>";
+}
+
 if(isset($_POST["Doctor_login-submit"])){
 
     require "../SQL/dbConnect.php";
@@ -8,13 +14,12 @@ if(isset($_POST["Doctor_login-submit"])){
     $password = $_POST['password'];
 
     if(empty($email) || empty($password)){
-        header("Location: ../Doctor_login.php?error=emptyfields&mail=".$email);
-        exit();
+        function_alert("Empty fields email or password");
     }
 
     else{
         /*doctor table should be used instead of tempdoctor*/
-        $sql = "SELECT * FROM TempDoctor WHERE Email=? and Approved=1";
+        $sql = "SELECT * FROM Doctor WHERE Email=? and Approved=1";
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)){
@@ -34,8 +39,7 @@ if(isset($_POST["Doctor_login-submit"])){
                 $password_check = password_verify($password, $row['Password']);
 
                 if($password_check == false){
-                    header("Location: ../Doctor_login.php?error=wrongpassword");
-                    exit();
+                    function_alert("Wrong Password");
 
                 }
                 else if($password_check == true){
@@ -50,8 +54,7 @@ if(isset($_POST["Doctor_login-submit"])){
 
             }else{
 
-                header("Location: ../Doctor_login.php?error=emailnotfound");
-                exit();
+                function_alert("Email not found");
 
             }
         }

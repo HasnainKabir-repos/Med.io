@@ -1,4 +1,9 @@
 <?php
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/login.php';</script>";
+}
 
 if(isset($_POST["login-submit"])){
 
@@ -8,8 +13,7 @@ if(isset($_POST["login-submit"])){
     $password = $_POST['password'];
 
     if(empty($email) || empty($password)){
-        header("Location: ../Login.php?error=emptyfields&mail=".$email);
-        exit();
+        function_alert("Empty fields email or password");
     }
 
     else{
@@ -35,8 +39,7 @@ if(isset($_POST["login-submit"])){
 
                 if($password_check == false){
 
-                    header("Location: ../Login.php?error=wrongpassword");
-                    exit();
+                    function_alert("Wrong Password");
 
                 }
                 else if($password_check == true){
@@ -54,8 +57,7 @@ if(isset($_POST["login-submit"])){
             }else{
 
 
-                header("Location: ../Login.php?error=emailnotfound");
-                exit();
+                function_alert("Email not found");
 
             }
         }
