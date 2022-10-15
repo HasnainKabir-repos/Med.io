@@ -30,7 +30,8 @@
 
                 header("Location: ../patient_portal.php?error=sqlerror".$err);
                 exit();
-            }else{
+            }
+            else{
 
                 mysqli_stmt_bind_param($statement, "ssss", $patientID, $date, $message, $department);
                 mysqli_stmt_execute($statement);
