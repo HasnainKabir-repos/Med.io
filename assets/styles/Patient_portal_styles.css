@@ -156,6 +156,8 @@ section{
 
 #topbar {
     background: #fff;
+    position: fixed;
+    top:0;
     height: 40px;
     font-size: 14px;
     transition: all 0.5s;
