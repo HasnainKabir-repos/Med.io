@@ -30,7 +30,7 @@ error_reporting(0);
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
-                    <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
+                    <li class="nav-item"><a href="../admin/admin_logout.php" class="nav-link text-white">Logout</a> </li>
             </ul>
         </nav>
 
