@@ -32,6 +32,8 @@ error_reporting(0);
             <ul class="navbar-nav">
                     <li class="nav-item"><a href="../admin/admin_logout.php" class="nav-link text-white">Logout</a> </li>
             </ul>
+
+            
         </nav>
 
         <div class="container-fluid">
