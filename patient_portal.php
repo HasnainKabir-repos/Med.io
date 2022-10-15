@@ -5,11 +5,8 @@
 <html lang ="en">
     <head>
     <meta charset="utf-8">
-    <meta name="viewport" content = "width-device-width initial-scale=1" >
+    <meta name="viewport" content = "width=device-width initial-scale=1" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
-    <!--CSS FILE--->
-    <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -17,9 +14,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+
+    <!--CSS FILE--->
+    <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     
-    <!-- jQuery library 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+     <!--jQuery library--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Med.io</title>
     </head>
     <body>
@@ -144,7 +144,7 @@
             <h2>Make an appointment</h2>
           </div>
 
-          <form action="./PHP/patient_portal.inc.php" method="post" class="appointment-form">
+          <form action="./PHP/patient_portal.inc.php" method="post" id = "appointment-form" class="appointment-form">
             <div class="row">
 
               <div class="col-md-5 form-group mt-2">
@@ -184,13 +184,52 @@
             <div class="error-message"></div>
             <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
           </div>
-          <div class="text-center"><button type="appointment-submit" name="appointment-submit" >Make an Appointment</button></div>
+          <div class="text-center"><button type="appointment-submit" id="appointment-form-submit" name="appointment-submit" >Make an Appointment</button></div>
           </form>
 
 
         </div>
     </section>
 
+    <!-- Modals -->
+
+    <!-- Appointment success-->
+  <div class="modal custom fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Success</h5>
+        </div>
+        <div class="modal-body">
+          Your appointment has been placed. Please wait for your doctor to be assigned.
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- empty fields error-->
+   <div class="modal custom fade" id="emptyfieldsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
+        </div>
+        <div class="modal-body">
+          Please fill out all the fields
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Department-->
     <section class="departments" id="departments">
       <div class="container">
         <div class="section-title">
@@ -249,7 +288,7 @@
                        Internists often serve as a patient's primary doctor, coordinating all that person's health care.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                    <img src="" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
