@@ -32,7 +32,6 @@ session_start();
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Admin</a></li>
                     <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
             </ul>
         </nav>
@@ -69,7 +68,7 @@ session_start();
 
                                         <h5 class="my-2 text-white" style="font-size:30px;"><?php echo $num; ?></h5>
                                         <h5 class="text-white">Total</h5>
-                                        <h5 class="text-white">Admin</h5>
+                                        <h5 class="text-white">Admins</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="../admin/admin.php"><i class="fa fa-solid fa-user-shield fa-3x my-4" style="color:azure;"></i></a>
@@ -86,7 +85,7 @@ session_start();
                                     <div class="col-md-8">
                                         <h5 class="my-2 text-white" style="font-size:30px;">0</h5>
                                         <h5 class="text-white">Total</h5>
-                                        <h5 class="text-white">Doctor</h5>
+                                        <h5 class="text-white">Doctors</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="#"><i class="fa fa-solid fa-user-doctor fa-3x my-4" style="color:azure;"></i></i></a>
@@ -100,9 +99,13 @@ session_start();
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h5 class="my-2 text-white" style="font-size:30px;">0</h5>
+                                        <?php
+                                        $p = mysqli_query($conn,"SELECT * FROM patient");
+                                        $pp = mysqli_num_rows($p);
+                                        ?>
+                                        <h5 class="my-2 text-white" style="font-size:30px;"><?php echo $pp; ?></h5>
                                         <h5 class="text-white">Total</h5>
-                                        <h5 class="text-white">Patient</h5>
+                                        <h5 class="text-white">Patients</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="#"><i class="fa fa-solid fa-hospital-user fa-3x my-4" style="color:azure;"></i></a>
@@ -119,7 +122,7 @@ session_start();
                                     <div class="col-md-8">
                                         <h5 class="my-2 text-white" style="font-size:30px;">0</h5>
                                         <h5 class="text-white">Total</h5>
-                                        <h5 class="text-white">Report</h5>
+                                        <h5 class="text-white">Reports</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="#"><i class="fa fa-solid fa-file-contract fa-3x my-4" style="color:azure;"></i></a>
@@ -138,7 +141,7 @@ session_start();
                                     <div class="col-md-8">
                                         <h5 class="my-2 text-black" style="font-size:30px;">0</h5>
                                         <h5 class="text-black">Total</h5>
-                                        <h5 class="text-black">Request</h5>
+                                        <h5 class="text-black">Requests</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="#"><i class="fa fa-solid fa-people-group fa-3x my-4" style="color:azure;"></i></a>
@@ -146,7 +149,29 @@ session_start();
                                 </div>
                             </div>
                             </div>
-                       
+
+                            <!--Total Appointment-->
+
+                            <div class="col-md-3 bg-success mx-2 my-3" style="height:130px; border-radius:10px;">
+                            <div class="col-md-18">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                    <?php
+                                        $p = mysqli_query($conn,"SELECT * FROM requests");
+                                        $pp = mysqli_num_rows($p);
+                                        ?>
+                                        <h5 class="my-2 text-black" style="font-size:30px;"><?php echo $pp; ?></h5>
+                                        <h5 class="text-black">Total</h5>
+                                        <h5 class="text-black">Appointments</h5>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="#"><i class="fa fa-solid fa-person-circle-plus fa-3x my-4" style="color:azure;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                      
+                            
                         </div>
                       </div>
                     </div>

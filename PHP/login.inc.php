@@ -25,7 +25,6 @@ if(isset($_POST["login-submit"])){
             header("Location: ../Login.php?error=sqlerror");
             exit();
         }
-
         else{
 
             mysqli_stmt_bind_param($statement, "s", $email);
@@ -38,12 +37,9 @@ if(isset($_POST["login-submit"])){
                 $password_check = password_verify($password, $row['Password']);
 
                 if($password_check == false){
-
                     function_alert("Wrong Password");
-
                 }
                 else if($password_check == true){
-
                     session_start();
                     $_SESSION['patientID'] = $row['ID'];
                     $_SESSION['patientEmail'] = $row['Email'];
@@ -51,19 +47,15 @@ if(isset($_POST["login-submit"])){
 
                     header("Location: ../patient_portal.php?login=success");
                     exit();
-
                 }
-
-            }else{
-
-
+            }
+            else{
                 function_alert("Email not found");
-
             }
         }
     }
-
-}else{
+}
+else{
     header("Location: ../Login.php");
     exit();
 }
