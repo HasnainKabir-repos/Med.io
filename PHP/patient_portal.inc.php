@@ -36,6 +36,7 @@
                 mysqli_stmt_bind_param($statement, "ssss", $patientID, $date, $message, $department);
                 mysqli_stmt_execute($statement);
 
+
                 header("Location: ../patient_portal.php?appointment=success");
                 exit();
             }

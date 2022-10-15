@@ -770,3 +770,12 @@ section{
     background: #1977cc;
   }
 }
+
+.modal.custom .modal-dialog .modal-content .modal-footer  .btn.btn-secondary {
+  background: #1977cc;
+  color: #fff;
+}
+
+.modal.custom .modal-dialog .modal-footer .btn.btn-secondary:hover {
+  background: rgb(14, 63, 108);
+}
