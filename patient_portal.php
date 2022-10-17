@@ -18,8 +18,8 @@
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     
-     <!--jQuery library--> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!--jQuery library
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--> 
     <title>Med.io</title>
     </head>
     <body>
