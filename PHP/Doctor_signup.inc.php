@@ -37,7 +37,7 @@ if(isset($_POST["Doctor_signup-submit"])){
     }
 
     else{
-        $sql = "SELECT Email FROM TempDoctor WHERE Email=?";
+        $sql = "SELECT Email FROM Doctor WHERE Email=?";
         $statement = mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($statement, $sql)){
