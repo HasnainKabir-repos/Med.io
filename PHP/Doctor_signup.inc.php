@@ -56,7 +56,7 @@ if(isset($_POST["Doctor_signup-submit"])){
             
             else{
 
-                $sql = "INSERT INTO TempDoctor (Name, Email, Password, Gender, Birth_date,
+                $sql = "INSERT INTO Doctor (Name, Email, Password, Gender, Birth_date,
                 Age, Birth_place, Department,Instituitional_background,Approved) VALUES (?,?,?,?,?,?,?,?,?,0)";
                 $statement = mysqli_stmt_init($conn);
         

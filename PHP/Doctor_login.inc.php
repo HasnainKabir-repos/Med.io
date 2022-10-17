@@ -46,6 +46,14 @@ if(isset($_POST["Doctor_login-submit"])){
                     session_start();
                     $_SESSION['DoctorID'] = $row['ID'];
                     $_SESSION['DoctorEmail'] = $row['Email'];
+                    $_SESSION['DoctorName'] = $row['Name'];
+                    $_SESSION['DoctorBirth_date'] = $row['Birth_date'];
+                    $_SESSION['DoctorBirth_place'] = $row['Birth_place'];
+                    $_SESSION['DoctorAge'] = $row['Age'];
+                    $_SESSION['DoctorGender'] = $row['Gender'];
+                    $_SESSION['DoctorInstituitional_background'] = $row['Instituitional_background'];
+                    $_SESSION['DoctorDepartment'] = $row['Department'];
+                    $_SESSION['Doctorloggedin'] = true;
 
                     header("Location: ../Doctor_portal.php?login=success");
                     exit();
