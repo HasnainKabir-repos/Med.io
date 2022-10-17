@@ -42,10 +42,13 @@ if(isset($_POST["Admin_login-submit"])){
                     exit();
                 }
                 else if($password_check == true){
+                    echo "<script>alert('You Have Logged In as an Admin!')</script>";
                     session_start();
+                    
                     $_SESSION['adminUser'] = $row['User'];
                     $_SESSION['adminPassword'] = $row['Password'];
 
+                    
                     header("Location: ../admin/index.php");
                     exit();
                 }

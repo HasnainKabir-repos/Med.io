@@ -5,8 +5,8 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Manage Patients</title>
-        
+        <title>Manage Appointments</title>
+    <link rel="stylesheet" type="text/css" href="../assets/styles/admin_font.css">    
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -30,7 +30,15 @@ error_reporting(0);
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
+                <?php 
+                  if(isset($_SESSION['adminUser'])){
+                    $user = $_SESSION['adminUser'];
+                    echo '
+                    <li class="nav-item"><a href="#" class="nav-link text-white">'.$user.'</a></li>
                     <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
+                    ';
+                  }
+                ?>  
             </ul>
         </nav>
 

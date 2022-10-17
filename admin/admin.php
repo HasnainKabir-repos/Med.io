@@ -6,7 +6,8 @@ error_reporting(0);
 <html>
     <head>
         <title>Manage Admins</title>
-        
+
+    <link rel="stylesheet" type="text/css" href="../assets/styles/admin_font.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -30,9 +31,16 @@ error_reporting(0);
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
-                    <li class="nav-item"><a href="../admin/admin_logout.php" class="nav-link text-white">Logout</a> </li>
+                <?php 
+                  if(isset($_SESSION['adminUser'])){
+                    $user = $_SESSION['adminUser'];
+                    echo '
+                    <li class="nav-item"><a href="#" class="nav-link text-white">'.$user.'</a></li>
+                    <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
+                    ';
+                  }
+                ?>  
             </ul>
-
             
         </nav>
 
@@ -52,7 +60,7 @@ error_reporting(0);
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5 class="text-center" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top:25px;">All Admin</h5>
+                                    <h5 class="text-center" style="font-family:Poppins;margin-top:25px;">All Admin</h5>
 
                                     <?php
                                      $ad = $_SESSION['admin'];
@@ -61,12 +69,12 @@ error_reporting(0);
                                      $output =
                                      '<table class="table table-striped table-dark table-bordered">
                                      <th>Username</th>
-                                     <th>Action</th>
+                                     <th style="width:10%;">Action</th>
                                      <tr>
                                      ';
 
                                      if(mysqli_num_rows($res)< 1){
-                                        $output ="<tr><td colspan='2' class='text-center'>No New Admin</td></tr>";
+                                        $output ="<h5 class='text-center' style='font-family:Poppins;'>No New Admin</h5>";
                                      }
 
                                      while($row = mysqli_fetch_array($res)){
@@ -89,7 +97,6 @@ error_reporting(0);
 
                                         $query = "DELETE FROM admin WHERE User='$user'";
                                         mysqli_query($conn,$query);
-                                        header("Location: ../admin/admin.php?remove=success");
                                      }
                                     ?>
             
@@ -128,7 +135,7 @@ error_reporting(0);
                                     $show = "";
                                 }
                                 ?>
-                                    <h5 class="text-center" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top:25px;">Add Admin</h5>
+                                    <h5 class="text-center" style="font-family:Poppins;margin-top:25px;"">Add Admin</h5>
                                     <form method="post" enctype="multipart/form-data">
                                         <div>
                                             <?php echo $show; ?>
@@ -141,11 +148,10 @@ error_reporting(0);
                                             <label>Password</label>
                                             <input type="password" name="password" class="form-control" placeholder="Enter Admin Password">
                                         </div>
-                                        <input type="submit" name="add" value="Add New Admin" class="btn btn-success">
+                                        <input type="submit" name="add" value="Add New Admin" class="btn btn-info" style="margin-left:200px;">
                                     </form>
                                     
                                 </div>
-
                             </div>
                         </div>
                     </div>
