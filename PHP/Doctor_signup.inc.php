@@ -37,7 +37,7 @@ if(isset($_POST["Doctor_signup-submit"])){
     }
 
     else{
-        $sql = "SELECT Email FROM TempDoctor WHERE Email=?";
+        $sql = "SELECT Email FROM Doctor WHERE Email=?";
         $statement = mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($statement, $sql)){
@@ -73,12 +73,14 @@ if(isset($_POST["Doctor_signup-submit"])){
                                         $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background);
                     mysqli_stmt_execute($statement);
                     function_alert2("Approval Pending");
+                    header("Location: ../Doctor_login.php?signup=success");
+                    exit();
                 }
             }
         }
     }
 
-    mysqli_stmt_close($statement);
+    //mysqli_stmt_close($statement);
     mysqli_close($conn); 
 
 }
