@@ -5,6 +5,7 @@
 <html>
     <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="./assets/styles/admin_font.css">
         <title>
             Login
         </title>

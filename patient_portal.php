@@ -17,6 +17,7 @@
 
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
+    <link rel="stylesheet" href="./assets/styles/admin_font.css">
     
      <!--jQuery library
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--> 
@@ -141,7 +142,7 @@
       
         <div class="container">
           <div class="appointment-title">
-            <h2>Make an appointment</h2>
+            <h2 class="text-black">Make an appointment</h2>
           </div>
 
           <form action="./PHP/patient_portal.inc.php" method="post" id = "appointment-form" class="appointment-form">
