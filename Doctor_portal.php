@@ -58,7 +58,7 @@
       <div class="container">
         <h1>Doctor | Dashboard</h1>
         <a href="#intro" class="btn-My-Profile scrollto">My Profile</a><br>
-        <a href="#intro" class="btn-My-Profile scrollto">Appointment List</a>
+        <a href="#appointment" class="btn-My-Profile ">Appointment List</a>
       </div>
     </section>
 

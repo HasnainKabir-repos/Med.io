@@ -1,5 +1,11 @@
 <?php
 
+function calculate_age($dob)
+{
+    $age=(date('Y') - date('Y',strtotime($dob)));
+    return $age;
+}
+
 function function_alert($message) {
       
     // Display the alert box 
@@ -19,7 +25,7 @@ if(isset($_POST["Doctor_signup-submit"])){
     $conf_password = $_POST['confirm_password'];
     $date_of_birth = $_POST['birth_date'];
     $gender = $_POST['gender'];
-    $age = $_POST['age'];
+    $age = calculate_age($date_of_birth);
     $place_of_birth = $_POST['birth_place'];
     $Instituitional_background = $_POST['Instituitional_background'];
     $Department = $_POST['Department'];
