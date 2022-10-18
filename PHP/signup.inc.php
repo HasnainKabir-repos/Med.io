@@ -31,10 +31,11 @@ if(isset($_POST["signup-submit"])){
     $place_of_birth = $_POST['birth_place'];
     $med_history = $_POST['medical_history'];
     $vaccination = $_POST['vaccination_status'];
+    $phone_number=$_POST['Phone_number'];
 
 
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
-    empty($gender) ||empty($age) ||empty($place_of_birth)){
+    empty($gender) ||empty($age) ||empty($place_of_birth)|| empty($phone_number)){
         function_alert("Empty fields");
     }
 
@@ -68,7 +69,7 @@ if(isset($_POST["signup-submit"])){
             else{
 
                 $sql = "INSERT INTO patient (Name, Email, Password, Gender, Birth_date,
-                Age, Birth_place, Previous_Medical_History, Vaccination_status) VALUES (?,?,?,?,?,?,?,?,?)";
+                Age, Birth_place, Previous_Medical_History, Vaccination_status,Phone_number) VALUES (?,?,?,?,?,?,?,?,?,?)";
                 $statement = mysqli_stmt_init($conn);
         
                 if(!mysqli_stmt_prepare($statement, $sql)){
@@ -80,8 +81,8 @@ if(isset($_POST["signup-submit"])){
 
                     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-                    mysqli_stmt_bind_param($statement, "sssssssss", $name, $email, $hashed_password,
-                                        $gender, $date_of_birth, $age, $place_of_birth, $med_history, $vaccination);
+                    mysqli_stmt_bind_param($statement, "ssssssssss", $name, $email, $hashed_password,
+                                        $gender, $date_of_birth, $age, $place_of_birth, $med_history, $vaccination,$phone_number);
                     mysqli_stmt_execute($statement);
                     function_alert2("Signup Success");
                 }
