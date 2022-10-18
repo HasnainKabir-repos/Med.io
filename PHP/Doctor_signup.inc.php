@@ -76,7 +76,7 @@ if(isset($_POST["Doctor_signup-submit"])){
 
                     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-                    mysqli_stmt_bind_param($statement, "sssssssss", $name, $email, $hashed_password,
+                    mysqli_stmt_bind_param($statement, "ssssssssss", $name, $email, $hashed_password,
                                         $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background,$phone_number);
                     mysqli_stmt_execute($statement);
                     function_alert2("Approval Pending");

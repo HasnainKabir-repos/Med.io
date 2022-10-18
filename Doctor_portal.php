@@ -77,36 +77,36 @@
       <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
         <h3>My Profile</h3><br><br>
 
-          <h4 class="name"><a href="#name">Name</a></h4>
+        <h4 class="Name">Name</h4>
           <p class="description"><?php echo $_SESSION['DoctorName'];?>
           </p>
         
 
-          <h4 class="Age"><a href="#age">Age</a></h4>
+          <h4 class="Age">Age</h4>
           <p class="description"><?php echo $_SESSION['DoctorAge'];?>
           </p>
           
-          <h4 class="Birthdate"><a href="#name">Birth Date</a></h4>
+          <h4 class="Birth_date">Birth Date</h4>
           <p class="description"><?php echo $_SESSION['DoctorBirth_date'];?>
           </p>
-          <h4 class="name"><a href="#name">Birth Place</a></h4>
+          <h4 class="Birth_place">Birth Place</h4>
           <p class="description"><?php echo $_SESSION['DoctorBirth_place'];?>
           </p>
         
-          <h4 class="name"><a href="#name">Instituition</a></h4>
+          <h4 class="Instituition">Instituition</h4>
           <p class="description"><?php echo $_SESSION['DoctorInstituitional_background'];?>
           </p>
          
-          <h4 class="name"><a href="#name">Department</a></h4>
+          <h4 class="Department">Department</h4>
           <p class="description"><?php echo $_SESSION['DoctorDepartment'];?>
           </p>
         
-          <h4 class="name"><a href="#name">Gender</a></h4>
+          <h4 class="Gender">gender</h4>
           <p class="description"><?php echo $_SESSION['DoctorGender'];?>
           </p>
         
           
-          <a href="Doctor_profile_update.php" class="update-btn" id="update_btn">Update Profile</a>
+          <a href="#update" class="update-btn" id="update_btn">Update Profile</a>
     </section>
       </div>
 
