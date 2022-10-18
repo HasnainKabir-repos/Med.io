@@ -452,7 +452,7 @@ section{
 }
 
 
-.appointment-btn {
+.update-btn {
   margin: auto;
   background: #2596be;
   color: #fff;
@@ -460,7 +460,20 @@ section{
   padding: 8px 25px;
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 100px;
+  font-size: 25px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+.logout-btn {
+  margin-left: 25px;
+  background: #2596be;
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -468,10 +481,16 @@ section{
 
   
 
-.appointment-btn:hover {
+.logout-btn:hover {
   background: #166ab5;
   color: #fff;
 }
+
+.update-btn:hover {
+  background: #166ab5;
+  color: #fff;
+}
+
 
 @media (max-width: 100px) {
   .appointment-btn {

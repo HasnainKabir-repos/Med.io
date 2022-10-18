@@ -49,7 +49,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
-      <a href="assets/Doctor_logout.php" class="appointment-btn scrollto" id="logout-btn">Logout</a>
+      <a href="assets/Doctor_logout.php" class="logout-btn scrollto" id="logout-btn">Logout</a>
         </div>
     </header>
 
@@ -106,7 +106,7 @@
           </p>
         
           
-          <a href="Doctor_profile_update.php" class="appointment-btn" id="update_btn">Update Profile</a>
+          <a href="Doctor_profile_update.php" class="update-btn" id="update_btn">Update Profile</a>
     </section>
       </div>
 
