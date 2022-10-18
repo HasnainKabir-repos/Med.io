@@ -12,9 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
-
+    
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     <link rel="stylesheet" href="./assets/styles/admin_font.css">
@@ -49,7 +47,7 @@
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctors</a></li>
+          <li><a class="nav-link scrollto" href="#">Doctors</a></li>
 
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -73,7 +71,17 @@
       </nav>
 
         <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-        <a href="assets/logout.php" class="appointment-btn scrollto" id="logout-btn">Logout</a>
+
+        <?php
+          if(isset($_SESSION['patientloggedin'])){
+            echo'<a href="assets/logout.php" class="appointment-btn scrollto" id="logout-btn">Logout</a>';
+          }else{
+
+            echo'<a href="index.php" class="appointment-btn scrollto" id="login-btn">Login</a>';
+          }
+        ?>
+        
+        
         </div>
     </header>
 
