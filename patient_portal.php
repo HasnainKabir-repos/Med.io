@@ -159,17 +159,17 @@
               <label for="department" name="dept-label">Choose your department</label>
               <select name="department" id="department" class="form-select">
                 <option value="">Select Department</option>
-                <option value="#">Medicine</option>
-                <option value="#">Eye Care</option>
-                <option value="#">Psychiatry</option>
-                <option value="#">Cardiology</option>
-                <option value="#">General Surgeon</option>
-                <option value="#">Neurology</option>
-                <option value="#">E.N.T</option>
-                <option value="#">Orthopedics
+                <option value="Medicine">Medicine</option>
+                <option value="Eye Care">Eye Care</option>
+                <option value="Psychiatry">Psychiatry</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="General Surgeon">General Surgeon</option>
+                <option value="Neurology">Neurology</option>
+                <option value="E.N.T">E.N.T</option>
+                <option value="Orthopedics">Orthopedics
                 </option>
-                <option value="#">Gynaecology</option>
-                <option value="#">Skin and VD</option>
+                <option value="Gynaecology">Gynaecology</option>
+                <option value="Skin and VD">Skin and VD</option>
               </select>
               <div class="validate"></div>
               </div>

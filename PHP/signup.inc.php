@@ -9,6 +9,13 @@ function function_alert2($message) {
     // Display the alert box 
     echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/login.php';</script>";
 }
+
+function calculate_age($dob)
+{
+    $age=(date('Y') - date('Y',strtotime($dob)));
+    return $age;
+}
+
 if(isset($_POST["signup-submit"])){
     require '../SQL/dbConnect.php';
 
@@ -20,7 +27,7 @@ if(isset($_POST["signup-submit"])){
     $conf_password = $_POST['confirm_password'];
     $date_of_birth = $_POST['birth_date'];
     $gender = $_POST['gender'];
-    $age = $_POST['age'];
+    $age = calculate_age($date_of_birth);
     $place_of_birth = $_POST['birth_place'];
     $med_history = $_POST['medical_history'];
     $vaccination = $_POST['vaccination_status'];

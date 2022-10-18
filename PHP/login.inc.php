@@ -5,6 +5,8 @@ function function_alert($message) {
     echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/login.php';</script>";
 }
 
+
+
 if(isset($_POST["login-submit"])){
 
     require "../SQL/dbConnect.php";

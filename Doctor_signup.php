@@ -37,9 +37,9 @@
             <input type="radio" id = "female" name="gender" value="Female">
             <label for="Female">Female</label><br>
 
-            <!--Age-->
+            <!--Age
             <label for="age">Age*</label><br>
-            <input type="number" name="age" id="age"><br>
+            <input type="number" name="age" id="age"><br>-->
 
 
             <!--Date of Birth-->
