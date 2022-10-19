@@ -1,6 +1,12 @@
 <?php
     session_start();
 ?>
+<?php
+    if(!isset($_SESSION['Doctorloggedin'])){
+      header("Location: ../Med.io/Doctor_login.php");
+    exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang ="en">
     <head>
