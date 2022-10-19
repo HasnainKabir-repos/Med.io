@@ -1,6 +1,6 @@
 <?php
-session_start();
-error_reporting(0);
+   session_start();
+   error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +31,8 @@ error_reporting(0);
             <div class="mr-auto"></div>
 
            <ul class="navbar-nav">
-                <?php 
+               
+               <?php 
                   if(isset($_SESSION['adminUser'])){
                     $user = $_SESSION['adminUser'];
                     echo '
@@ -47,7 +48,6 @@ error_reporting(0);
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-2" style="margin-left:-30px";>
-
             <!--Side Navigation-->
                          <?php
                            include("./sidenav.php");
