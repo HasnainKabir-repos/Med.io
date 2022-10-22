@@ -7,7 +7,6 @@ function function_alert($message) {
 }
 
 if(isset($_POST["Doctor_login-submit"])){
-
     require "../SQL/dbConnect.php";
 
     $email = $_POST['email'];

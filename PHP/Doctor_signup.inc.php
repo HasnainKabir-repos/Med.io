@@ -1,5 +1,11 @@
 <?php
 
+function calculate_age($dob)
+{
+    $age=(date('Y') - date('Y',strtotime($dob)));
+    return $age;
+}
+
 function function_alert($message) {
       
     // Display the alert box 
@@ -19,13 +25,14 @@ if(isset($_POST["Doctor_signup-submit"])){
     $conf_password = $_POST['confirm_password'];
     $date_of_birth = $_POST['birth_date'];
     $gender = $_POST['gender'];
-    $age = $_POST['age'];
+    $age = calculate_age($date_of_birth);
     $place_of_birth = $_POST['birth_place'];
     $Instituitional_background = $_POST['Instituitional_background'];
     $Department = $_POST['Department'];
+    $phone_number=$_POST['Phone_number'];
 
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
-    empty($gender) ||empty($age) ||empty($place_of_birth)||empty($Instituitional_background)||empty($Department)){
+    empty($gender) ||empty($age) ||empty($place_of_birth)||empty($Instituitional_background)||empty($Department)|| empty($phone_number)){
         
     }
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
@@ -57,7 +64,7 @@ if(isset($_POST["Doctor_signup-submit"])){
             else{
 
                 $sql = "INSERT INTO Doctor (Name, Email, Password, Gender, Birth_date,
-                Age, Birth_place, Department,Instituitional_background,Approved) VALUES (?,?,?,?,?,?,?,?,?,0)";
+                Age, Birth_place, Department,Instituitional_background,Phone_number,Approved) VALUES (?,?,?,?,?,?,?,?,?,?,0)";
                 $statement = mysqli_stmt_init($conn);
         
                 if(!mysqli_stmt_prepare($statement, $sql)){
@@ -69,8 +76,8 @@ if(isset($_POST["Doctor_signup-submit"])){
 
                     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-                    mysqli_stmt_bind_param($statement, "sssssssss", $name, $email, $hashed_password,
-                                        $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background);
+                    mysqli_stmt_bind_param($statement, "ssssssssss", $name, $email, $hashed_password,
+                                        $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background,$phone_number);
                     mysqli_stmt_execute($statement);
                     function_alert2("Approval Pending");
                     header("Location: ../Doctor_login.php?signup=success");

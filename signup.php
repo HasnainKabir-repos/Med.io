@@ -41,9 +41,9 @@
             <label for="birth_date">Date Of Birth*</label><br>
             <input type="Date" name="birth_date" id="birth_date"><br>
 
-            <!--Age-->
-            <label for="age">Age*</label><br>
-            <input type="number" name="age" id="age"><br>
+            <!--Phone Number-->
+            <label for="Phone_number">Phone Number*</label><br>
+            <input type="Phone_number" name="Phone_number" id="Phone_number"><br>
 
             <!--Place of Birth-->
             <label for="birth_place">Place Of Birth*</label><br>
