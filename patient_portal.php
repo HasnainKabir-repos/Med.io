@@ -23,15 +23,6 @@
     <title>Med.io</title>
     </head>
     <body>
-    <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="d-flex align-items-center fixed-top">
-        <div class="container d-flex justify-content-between">
-        <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-envelope"></i> <a href="mailto:hasnainkabir@iut-dhaka.edu">Mail</a>
-            <i class="bi bi-phone"></i>+8801747116015
-        </div>
-        </div>
-    </div>
 
     <!--Header-->
 
@@ -47,22 +38,22 @@
           <li><a class="nav-link scrollto" href='admin_login.php'>Admin</a></li>
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="test_portal.php">Services</a></li>
           <li><a class="nav-link scrollto" href="#">Doctors</a></li>
 
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a class="nav-link scrollto" href="#departments">Show All Departments</a></li>
-              <li><a href="#">Medicine</a></li>
-              <li><a href="#">Psychiatry</a></li>
-              <li><a href="#">Cardiology</a></li>
-              <li><a href="#">General Surgeon</a></li>
-              <li><a href="#">Neurology</a></li>
-              <li><a href="#">E.N.T</a></li>
-              <li><a href="#">Orthopedics</a></li>
-              <li><a href="#">Gynaecology
+              <li><a href="#tab-1">Medicine</a></li>
+              <li><a href="#tab-2">Psychiatry</a></li>
+              <li><a href="#tab-3">Cardiology</a></li>
+              <li><a href="#tab-4">General Surgeon</a></li>
+              <li><a href="#tab-5">Neurology</a></li>
+              <li><a href="#tab-6">E.N.T</a></li>
+              <li><a href="#tab-7">Orthopedics</a></li>
+              <li><a href="#tab-8">Gynaecology
               </a></li>
-              <li><a href="#">Skin and VD</a></li>
+              <li><a href="#tab-9">Skin and VD</a></li>
               
             </ul>
           </li>
@@ -432,6 +423,8 @@ Dermatologists possess expertise in diagnostic procedures as well as disease-rel
           </div>
       </div>
     </section>
+
+   
 
     </main>
 
