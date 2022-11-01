@@ -80,12 +80,14 @@ if(isset($_POST["Doctor_signup-submit"])){
                                         $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background,$phone_number);
                     mysqli_stmt_execute($statement);
                     function_alert2("Approval Pending");
+                    header("Location: ../Doctor_login.php?signup=success");
+                    exit();
                 }
             }
         }
     }
 
-    mysqli_stmt_close($statement);
+    //mysqli_stmt_close($statement);
     mysqli_close($conn); 
 
 }
