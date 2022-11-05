@@ -63,7 +63,7 @@ session_start();
                     <div class="col-md-12 my-5">
                         <div class="row">
 
-                        <!--Total Admin-->
+                            <!--Total Admin-->
 
                             <div class="col-md-3 bg-info mx-2" style="height:130px; border-radius:10px;">
                             <div class="col-md-12">
@@ -178,9 +178,7 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                      
-                            
+                            </div>                                                
                         </div>
                       </div>
                     </div>

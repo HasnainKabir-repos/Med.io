@@ -6,7 +6,7 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content = "width-device-width initial-scale=1" >
-    <link rel="stylesheet" href="./assets/styles/admin_login_styles.css">
+    <link rel="stylesheet" href="./assets/styles/adminLogin_styles.css">
 
 
     <title>Admin Login Page</title>

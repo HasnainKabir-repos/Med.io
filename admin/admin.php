@@ -25,7 +25,7 @@ error_reporting(0);
         <?php
         include("../SQL/dbConnect.php")
         ?>
-        <nav class="navbar navbar-expand-lg navbar-info bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-info bg-info">
             <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
             <h5 class="text-white">Admin Panel</h5>
             <div class="mr-auto"></div>
@@ -67,7 +67,7 @@ error_reporting(0);
                                      $query = "SELECT * FROM admin WHERE User !='$ad'";
                                      $res = mysqli_query($conn,$query);
                                      $output =
-                                     '<table class="table table-striped table-dark table-bordered">
+                                     '<table class="table table-striped table-white table-bordered">
                                      <th>Username</th>
                                      <th style="width:10%;">Action</th>
                                      <tr>
