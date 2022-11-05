@@ -149,7 +149,7 @@
 
               <div class="col-md-5 form-group mt-2">
                 <label for="date" name="date-label">Select the appointment date</label>
-                <input type="date" class="form-control" id="appointment-date" name="appointment-date" placeholder="Appointment Date">
+                <input type="date" class="form-control" autocomplete="off" id="appointment-date" name="appointment-date" placeholder="Appointment Date">
                 <div class="validate"></div>
               </div>
 
