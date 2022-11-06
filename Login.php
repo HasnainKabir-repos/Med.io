@@ -4,56 +4,84 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content = "width=device-width initial-scale=1" >
+    
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+    <!--CSS FILE--->
+    <link rel="stylesheet" href="assets/styles/login_styles.css">
     <link rel="stylesheet" href="./assets/styles/admin_font.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <title>
             Login
         </title>
     </head>
 
     <body>
-        <div class ="container">
 
-            <div class = "form-control">
-                <div class= "form-login">
+        <div class = "container-fluid">
+            <div class = "center">
+                <div class = "heading">
+                    <h3>Login</h3>
+                    <h4>Please login for full access</h4>
+                </div>
+                
+                <div class = "form-content">
                 <form class="form-login" action="PHP/login.inc.php" method = "post">
 
-                <!--Email-->
-                    <div class="entry">
-                    <label for="email">Email</label><br><br>
+            <!--Email-->
 
-                        <div class="fields">
-                        <input type="text" id = "email" name = "email"><br><br>
-                        </div>
-                <!--Password-->
-                        <label for="password">Password</label><br><br>
+            <div class = "placeholders">
 
-                        <div class="fields">
-                        <input type="password" id = "password" name="password"><br><br>
-                        </div>
-                    </div>
-                <!--Login-->
-                    <button type="submit" name="login-submit" id ="login-submit">Sign In</button><br><br>
-                    
+                    <input placeholder="Email" type="text" name = "email"><br><br>
 
+            <!--Password-->
+
+                    <input placeholder="Password" type="password" name="password"><br><br>
+                </div>
+            <!--Login-->
+                <button type="submit" name="login-submit" id ="login-submit">Sign In</button><br><br>
+                
+
+            </form>
+            </div>
+
+            <div class = "rest-contents">
+
+                <div class="forgot-btn">
+                <form action="Recover_Password.php">
+                        <button type="submit" name="forgot_Password">Forgot Password?</button>
                 </form>
                 </div>
-
-                <div class="form-redirect">
-
                 
-                <form action="Recover_Password.php">
-                    <button type="submit" name="forgot_Password">Forgot Password</button>
-                </form>
-                <h3>Don't have an Account? Sign Up now!
-                    </h3>
-
-                <form action="signup.php">
+                    <hr class = "my-4">
+                <div class = "heading2">
+                    <h4>Don't have an Account? Sign Up now!
+                    </h4>
+                </div>
+                
+                <div class = "signup-redirect">
+                    <form action="signup.php">
                     <button type="submit" name="login-page-signup-button">Sign Up</button>
                 </form>
+
                 </div>
+                
             </div>
+            
+
+            </div>
+            
         </div>
-        
+
+                
+
     </body>
 </html>

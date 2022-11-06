@@ -17,9 +17,8 @@
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     <link rel="stylesheet" href="./assets/styles/admin_font.css">
-    
-     <!--jQuery library
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Med.io</title>
     </head>
     <body>
@@ -152,7 +151,7 @@
 
               <div class="col-md-5 form-group mt-2">
                 <label for="date" name="date-label">Select the appointment date</label>
-                <input type="date" class="form-control" id="appointment-date" name="appointment-date" placeholder="Appointment Date">
+                <input type="date" class="form-control" autocomplete="off" id="appointment-date" name="appointment-date" placeholder="Appointment Date">
                 <div class="validate"></div>
               </div>
 
