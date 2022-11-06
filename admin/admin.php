@@ -67,7 +67,7 @@ error_reporting(0);
                                      $query = "SELECT * FROM admin WHERE User !='$ad'";
                                      $res = mysqli_query($conn,$query);
                                      $output =
-                                     '<table class="table table-striped table-white table-bordered">
+                                     '<table class="table table-striped table-dark table-bordered">
                                      <th>Username</th>
                                      <th style="width:10%;">Action</th>
                                      <tr>

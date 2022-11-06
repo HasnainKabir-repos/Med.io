@@ -9,7 +9,6 @@
         $department = $_POST["department"];
         $message = $_POST["message"];
 
-
         if(!(isset($_SESSION['patientloggedin']))){
             header("Location: ../Login.php?error=notloggedin");
             exit();

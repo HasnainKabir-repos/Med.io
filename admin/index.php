@@ -23,11 +23,11 @@ session_start();
     
     </head>
 
-    <body style="background-color:darkslategray;">
+    <body style="background-color:white;">
         <?php
         include("../SQL/dbConnect.php");
         ?>
-        <nav class="navbar navbar-expand-lg navbar-info bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-info bg-info">
             <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
             <h5 class="text-white">Admin Panel</h5>
             <div class="mr-auto"></div>

@@ -24,7 +24,7 @@ error_reporting(0);
         <?php
         include("../SQL/dbConnect.php")
         ?>
-        <nav class="navbar navbar-expand-lg navbar-info bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-info bg-info">
             <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
             <h5 class="text-white">Manage Appointments</h5>
             <div class="mr-auto"></div>
@@ -70,8 +70,7 @@ error_reporting(0);
                             <th>Desired Date</th>
                             <th>Department</th>
                             <th>Special Message</th>
-                            
-                            </tr>
+                          </tr>
                         ";
 
                         if(mysqli_num_rows($res) < 1){
