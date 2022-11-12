@@ -21,6 +21,7 @@ th {text-align: left;}
 <?php
 
     session_start();
+
 if(isset($_POST['category'])){
 
     require '../SQL/dbConnect.php';

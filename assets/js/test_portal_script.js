@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#category').change(function(){
         var cat = 'category=' + $(this).val();
+        getService($(this).val());
         console.log(cat);
         $.post('../Med.io/PHP/test_portal.inc.php', cat, processResponse);
     });
@@ -8,7 +9,22 @@ $(document).ready(function(){
     function processResponse(data){
         $('#servicesInfo').html(data);
     }
+
 });
+
+
+function getService(val) {
+	$.ajax({
+	type: "POST",
+	url: "./PHP/test_portal.inc2.php",
+	data:'category='+val,
+        success: function(data){
+            console.log(data);
+            $('#serviceName').html(data);
+        }
+	});
+}
+
 
 var datePicker = document.getElementById("test-date");
 datePicker.min = getDate();

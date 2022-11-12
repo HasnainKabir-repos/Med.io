@@ -130,13 +130,14 @@ session_start();
                                 <option value="Radiology">Radiology</option>
                                 <option value="Ultrasound">Ultrasound</option>
                             </select>
-
+                            <div class = "servicedropdown">
+                                <select name="serviceName" id="serviceName" class="form-select">
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
                             <div class="serviceDate">
                                 <label for="date" name="date-label">Select your desired date</label>
                                 <input type="date" class="form-control" autocomplete="off" id="test-date" name="test-date" placeholder="test Date">
-                            </div>
-                            
-                            <div class = "servicedropdown">
                             </div>
 
                             <div class="test-btn">
