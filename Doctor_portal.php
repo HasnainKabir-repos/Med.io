@@ -107,7 +107,7 @@
           <p class="description"><?php echo $_SESSION['DoctorDepartment'];?>
           </p>
         
-          <h4 class="Gender">gender</h4>
+          <h4 class="Gender">Gender</h4>
           <p class="description"><?php echo $_SESSION['DoctorGender'];?>
           </p>
         

@@ -16,6 +16,8 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/Patient_portal_styles.css">
     <link rel="stylesheet" href="./assets/styles/admin_font.css">
@@ -97,25 +99,27 @@ session_start();
 
                         <div class="col-xl-7 col-lg-6 serv-cat d-flex flex-column align-items-stretch py-5 px-lg-5">
 
-                        <div class="row description">
-                            <h3>Please choose your desired category to learn about tests, charges and services provided by our hospital</h3>
+                        <div class="row description" >
+                            <h3 style="text-align:center;">Request for a service</h3>
+                            <p style="font-size: 18px; text-align:center; font-family:'Poppins';">
+                            Please select a category to learn more about the services we provide</p>
                         </div>
 
                         <div class = "row cat">
                         
                         <div class = "services-form">
                             <div class="services-title">
-                            <h2>View by category</h2>
+                            <h2>Select by category</h2>
                             </div>
-                            <form action="./PHP/test_portal.inc.php" method="post" id="test_form" class="test_form">
+                            <form action=".PHP/test_portal.inc.php" method="post">
 
                             <div class="col-lg form-group mt-2">
-                            <select name="category" id="category" class="form-select" onchange="this.form.submit()">
+                            <select name="category" id="category" class="form-select">
                                 <option value="">Select Category</option>
                                 <option value="Ambulance">Ambulance</option>
                                 <option value="Blood Bank">Blood Bank</option>
                                 <option value="Colonoscopy">Colonoscopy</option>
-                                <option value="Diagnostic charges">Diagnostic charges</option>
+                                <option value="Diagnostic">Diagnostic services</option>
                                 <option value="ECG">ECG</option>
                                 <option value="Echo">Echo</option>
                                 <option value="Endoscopy">Endoscopy</option>
@@ -126,7 +130,19 @@ session_start();
                                 <option value="Radiology">Radiology</option>
                                 <option value="Ultrasound">Ultrasound</option>
                             </select>
+                            <div class = "servicedropdown">
+                                <select name="serviceName" id="serviceName" class="form-select">
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
+                            <div class="serviceDate">
+                                <label for="date" name="date-label">Select your desired date</label>
+                                <input type="date" class="form-control" autocomplete="off" id="test-date" name="test-date" placeholder="test Date">
+                            </div>
 
+                            <div class="test-btn">
+                                <button type = "submit" id="test-form-submit" name="test-form-submit">Submit</button>
+                            </div>
                         </div>
                         </form>
                     </div>
@@ -137,15 +153,32 @@ session_start();
             </section>
 
             <!--Table-->
-            <section class="servicesInfo" id = "servicesInfo">
-                <div class = "container-fluid">
-                    <div class = "row">
-                        <div class="servicesTitle">
-                            <h3></h3>
-                        </div>
+            <div id = "servicesInfo">
+                <div class = "row">
+                    <div class="col-sm-12">
+
                     </div>
                 </div>
-            </section>
+            </div>
 
+            <!--Footer-->
+            <footer id="footer">
+            <div class="container">
+                <div class="row">
+                <div class="col footer-address">
+                    <h3>Med.io</h3>
+                    <p>Address: </p>
+                    <p>Contact: +8801747116015, +8801830638230, +8801764257445
+                    </p>
+                </div>
+                <div class="col footer-icon-links">
+                    <h5>Icons by</h5>
+                    <a href="https://freeicons.io">Freeicons</a>
+                </div>
+                </div>
+            </div>
+            </footer>
+
+    <script src = "./assets/js/test_portal_script.js"></script>
     </body>
 </html>

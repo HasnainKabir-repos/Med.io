@@ -624,13 +624,14 @@ section{
 }
 
 .services .services-form{
-  margin-top: 100px;
+  margin-top: 70px;
   
 }
 .services .services-title{
   justify-content: center;
   
 }
+
 
 .services .serv-cat .row.description h3{
   
@@ -639,10 +640,27 @@ section{
   margin-top: 20px;
 }
 
-.services .serv-cat .services-form h2{
+.services-form .services-title h2{
   font-family: "Poppins", sans-serif;
   font-size: 20px;
+  text-align: center;
+}
 
+.serviceDate{
+  margin-top: 15px;
+}
+
+
+.test-btn{
+  padding-top: 30px;
+  text-align: center;
+}
+
+.test-btn button{
+  background-color: #2596be;
+  color: #FFFFFF;
+  border-radius: 20px;
+  width: 150px;
 }
 /* Appointments */
 
@@ -849,3 +867,4 @@ section{
 .modal.custom .modal-dialog .modal-footer .btn.btn-secondary:hover {
   background: rgb(14, 63, 108);
 }
+

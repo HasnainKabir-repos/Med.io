@@ -64,7 +64,20 @@
  
 
               <label for="Department">Department</label><br>
-            <input type="text" name="Department" id="Department"><br>
+              <select name="Department" id="Department" class="form-select">
+                <option value="">Select Department</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Eye Care">Eye Care</option>
+                <option value="Psychiatry">Psychiatry</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="General Surgeon">General Surgeon</option>
+                <option value="Neurology">Neurology</option>
+                <option value="E.N.T">E.N.T</option>
+                <option value="Orthopedics">Orthopedics
+                </option>
+                <option value="Gynaecology">Gynaecology</option>
+                <option value="Skin and VD">Skin and VD</option>
+              </select><br>
             
 
             <!--Signup Button-->
