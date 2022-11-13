@@ -17,7 +17,7 @@ if(isset($_POST["Doctor_login-submit"])){
     }
 
     else{
-        /*doctor table should be used instead of tempdoctor*/
+        
         $sql = "SELECT * FROM Doctor WHERE Email=? and Approved=1";
         $statement = mysqli_stmt_init($conn);
 
