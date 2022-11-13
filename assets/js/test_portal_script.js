@@ -25,6 +25,27 @@ function getService(val) {
 	});
 }
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+
+    let successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
+    let emptyfieldsModal = new bootstrap.Modal(document.getElementById('emptyfieldsModal'), {});
+
+
+    const urlHeader = window.location.search;
+    const urlParams = new URLSearchParams(urlHeader);
+    const error_status = urlParams.get('error');
+
+    
+    if(error_status == 'emptyfields'){
+        
+        emptyfieldsModal.show();
+        var modalClose = document.getElementById("closeErrorModal").addEventListener('click', function(){
+            emptyfieldsModal.hide();
+        });
+    }
+});
+
 
 var datePicker = document.getElementById("test-date");
 datePicker.min = getDate();
@@ -44,3 +65,4 @@ function getDate(days){
     date  = new Date(date.getTime() - (offset*60*1000));
     return date.toISOString().split('T')[0];
 }
+
