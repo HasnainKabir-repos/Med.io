@@ -70,6 +70,27 @@ if(isset($_POST['category'])){
     
 }
 
+
+if(isset($_POST['test-form-submit'])){
+    require '../SQL/dbConnect.php';
+    $category = $_POST['category'];
+    $service = $_POST['serviceName'];
+    $date = $_POST['test-date'];
+
+    if(!(isset($_SESSION['patientloggedin']))){
+        header("Location: ../Login.php?error=notloggedin");
+        exit();
+    }
+
+    else if(empty($category) || empty($service) || ($date)){
+        header("Location: ../test_portal.php?error=emptyfields");
+        exit();
+    }else{
+
+        $patientID = $_SESSION['patientID'];
+    }
+
+}
 ?>
 
 </body>

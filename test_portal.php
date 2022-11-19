@@ -111,7 +111,7 @@ session_start();
                             <div class="services-title">
                             <h2>Select by category</h2>
                             </div>
-                            <form action=".PHP/test_portal.inc.php" method="post">
+                            <form action="./PHP/test_portal.inc.php" method="post">
 
                             <div class="col-lg form-group mt-2">
                             <select name="category" id="category" class="form-select">
@@ -132,7 +132,7 @@ session_start();
                             </select>
                             <div class = "servicedropdown">
                                 <select name="serviceName" id="serviceName" class="form-select">
-                                    <option value="">Select</option>
+                                    <option value="">Select Service</option>
                                 </select>
                             </div>
                             <div class="serviceDate">
@@ -160,6 +160,43 @@ session_start();
                     </div>
                 </div>
             </div>
+            <!-- Modals -->
+
+                    <!-- Appointment success-->
+                <div class="modal custom fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Success</h5>
+                        </div>
+                        <div class="modal-body">
+                        Your request has been placed. Please wait for confirmation via email.
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+
+                <!-- empty fields error-->
+                <div class="modal custom fade" id="emptyfieldsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
+                        </div>
+                        <div class="modal-body">
+                        Please fill out all the fields
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
             <!--Footer-->
             <footer id="footer">
@@ -179,6 +216,6 @@ session_start();
             </div>
             </footer>
 
-    <script src = "./assets/js/test_portal_script.js"></script>
+    <script src = "assets/js/test_portal_script.js"></script>
     </body>
 </html>

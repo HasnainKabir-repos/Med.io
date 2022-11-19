@@ -38,9 +38,26 @@
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
           <li><a class="nav-link scrollto" href="test_portal.php">Services</a></li>
-          <li><a class="nav-link scrollto" href="#">Doctors</a></li>
+          <li class="dropdown"><span>Doctor's List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="Doctor_list.php">All Doctors</a></li>
+              <li><a href="#Medicine">Medicine</a></li>
+              <li><a href="#Psychiatry">Psychiatry</a></li>
+              <li><a href="#tab-3">Cardiology</a></li>
+              <li><a href="#tab-4">General Surgeon</a></li>
+              <li><a href="#tab-5">Neurology</a></li>
+              <li><a href="#tab-6">E.N.T</a></li>
+              <li><a href="#tab-7">Orthopedics</a></li>
+              <li><a href="#tab-8">Gynaecology
+              </a></li>
+              <li><a href="#tab-9">Skin and VD</a></li>
+              
+            </ul>
+          </li>
           <li><a class="nav-link scrollto" href="./covid-portal/covid-portal-index.html">Covid-19 Portal</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctors</a></li>
+
 
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
