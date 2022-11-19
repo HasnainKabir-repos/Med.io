@@ -82,12 +82,30 @@ if(isset($_POST['test-form-submit'])){
         exit();
     }
 
-    else if(empty($category) || empty($service) || ($date)){
+    else if(empty($category) || empty($service) || empty($date)){
         header("Location: ../test_portal.php?error=emptyfields");
         exit();
     }else{
 
         $patientID = $_SESSION['patientID'];
+        $sql = "INSERT INTO servicesrequest (Service, PatientID, Date) VALUES (?,?,?)";
+
+        $statement = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($statement, $sql)){
+
+            $err = mysqli_stmt_error($statement);
+
+            header("Location: ../test_portal.php?error=sqlerror".$err);
+            exit();
+        }else{
+
+            mysqli_stmt_bind_param($statement, "sss", $service, $patientID, $date);
+            mysqli_stmt_execute($statement);
+
+            header("Location: ../test_portal.php?request=success");
+            exit();
+        }
     }
 
 }

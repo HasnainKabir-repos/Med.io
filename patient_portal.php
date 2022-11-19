@@ -56,7 +56,7 @@
           </li>
           <li><a class="nav-link scrollto" href="./covid-portal/covid-portal-index.html">Covid-19 Portal</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctors</a></li>
+          <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctor</a></li>
 
 
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
@@ -191,7 +191,14 @@
               </select>
               <div class="validate"></div>
               </div>
-            </div>
+
+              <div class="col-md-5 form-group mt-2">
+                <label for="doctorName" name= "doctor-label">Choose your desired doctor</label>
+                <select name="doctor" id="doctorName" class="form-select">
+                  <option value="">Select Doctor</option>
+                </select>
+              </div>
+            </div> 
 
             <div class="form-group mt-3">
               <textarea class="form-control message" name="message" rows="5" placeholder="Message (Optional)"></textarea>

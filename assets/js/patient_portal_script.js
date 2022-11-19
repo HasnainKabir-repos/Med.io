@@ -1,3 +1,25 @@
+$(document).ready(function(){
+    $('#department').change(function(){
+        var dept = 'department=' + $(this).val();
+        console.log($(this).val());
+        getDoctor($(this).val());
+    })
+})
+
+
+function getDoctor(val){
+    $.ajax({
+        type:"POST",
+        url:"./PHP/patient_portal.inc.php",
+        data:'department='+val,
+        
+        success: function(data){
+            console.log(data);
+            $('#doctorName').html(data);
+        }
+    })
+}
+
 
 var datePicker = document.getElementById("appointment-date");
 datePicker.min = getDate();
