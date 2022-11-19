@@ -8,7 +8,6 @@ $(document).ready(function(){
     function processResponse(data){
         $('#servicesInfo').html(data);
     }
-
 });
 
 
