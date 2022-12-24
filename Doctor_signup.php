@@ -57,7 +57,7 @@
             <!--Instituition-->
  
 
-            <label for="Instituitional_background">Instituition</label><br>
+            <label for="Instituitional_background">Institution</label><br>
             <input type="text" name="Instituitional_background" id="Instituitional_background"><br>
 
               <!--Department-->

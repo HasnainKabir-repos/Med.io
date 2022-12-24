@@ -40,26 +40,26 @@ session_start();
             <ul>
             <!--Admin Portal Added at the Navbar by Mukit-->
             <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
-            <li><a class="nav-link scrollto" href="#">Doctors</a></li>
+            <li><a class="nav-link scrollto" href="./Doctor_list.php">Doctors</a></li>
 
             <li class="dropdown"><span>Test and service charges</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <li><a class="nav-link scrollto" href="#services">Choose by category</a></li>
-                <li><a href="#">Ambulance</a></li>
-                <li><a href="#">Blood Bank</a></li>
-                <li><a href="#">Colonoscopy</a></li>
-                <li><a href="#">Diagnostic charges</a></li>
-                <li><a href="#">ECG</a></li>
-                <li><a href="#">Echo</a></li>
-                <li><a href="#">Endoscopy</a></li>
-                <li><a href="#">Fibroscan
+                <li><a href="#category">Ambulance</a></li>
+                <li><a href="#category">Blood Bank</a></li>
+                <li><a href="#category">Colonoscopy</a></li>
+                <li><a href="#category">Diagnostic charges</a></li>
+                <li><a href="#category">ECG</a></li>
+                <li><a href="#category">Echo</a></li>
+                <li><a href="#category">Endoscopy</a></li>
+                <li><a href="#category">Fibroscan
                 </a></li>
-                <li><a href="#">Molecular Diagnostics</a></li>
-                <li><a href="#">Neurology</a></li>
-                <li><a href="#">Opthalmology</a></li>
-                <li><a href="#">Pathology</a></li>
-                <li><a href="#">Radiology</a></li>
-                <li><a href="#">Ultrasound</a></li>
+                <li><a href="#category">Molecular Diagnostics</a></li>
+                <li><a href="#category">Neurology</a></li>
+                <li><a href="#category">Opthalmology</a></li>
+                <li><a href="#category">Pathology</a></li>
+                <li><a href="#category">Radiology</a></li>
+                <li><a href="#category">Ultrasound</a></li>
                 </ul>
             </li>
             
@@ -67,7 +67,7 @@ session_start();
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
 
-            <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Request for a</span> Service</a>
+            <a href="#category" class="appointment-btn scrollto"><span class="d-none d-md-inline">Request for a</span> Service</a>
 
             <?php
             if(isset($_SESSION['patientloggedin'])){

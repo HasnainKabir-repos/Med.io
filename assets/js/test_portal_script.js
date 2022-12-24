@@ -2,7 +2,6 @@ $(document).ready(function(){
     $('#category').change(function(){
         var cat = 'category=' + $(this).val();
         getService($(this).val());
-        console.log(cat);
         $.post('../Med.io/PHP/test_portal.inc.php', cat, processResponse);
     });
 
@@ -18,7 +17,6 @@ function getService(val) {
 	url: "./PHP/test_portal.inc2.php",
 	data:'category='+val,
         success: function(data){
-            console.log(data);
             $('#serviceName').html(data);
         }
 	});
@@ -33,10 +31,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const urlHeader = window.location.search;
     const urlParams = new URLSearchParams(urlHeader);
+    const status = urlParams.get('request');
     const error_status = urlParams.get('error');
 
-    
-    if(error_status == 'emptyfields'){
+    if(status == 'success'){
+        successModal.show();
+        console.log("request = success");
+        var modalClose = document.getElementById("successModal").addEventListener('click', function(){
+            successModal.hide();
+        })
+    }
+    else if(error_status == 'emptyfields'){
         
         emptyfieldsModal.show();
         var modalClose = document.getElementById("closeErrorModal").addEventListener('click', function(){
