@@ -100,7 +100,6 @@ error_reporting(0);
 
                             echo $output;
                         ?>
-
                     </div>
                 </div>
             </div>

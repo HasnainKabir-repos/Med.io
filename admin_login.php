@@ -25,7 +25,6 @@
                 </div>
                 <input type="submit" name="Admin_login-submit" value="Login">
             </form>
-
         </div>
     </body>
 </html>
