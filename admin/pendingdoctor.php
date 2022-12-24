@@ -61,56 +61,63 @@ error_reporting(0);
                                     <h5 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h5>
 
                                     <?php
-                                     $doc = $_SESSION['doctor'];
-                                     $query = "SELECT * FROM doctor WHERE Approved= 0";
-                                     $res = mysqli_query($conn,$query);
-                                     $output =
-                                     " <table class='table table-striped table-dark table-bordered'>
+                                    $query = "SELECT * FROM doctor WHERE Approved = 0";
+                                    $res = mysqli_query($conn, $query);
+
+                                    // Initialize the table output
+                                    $output = "
+                                       <table class='table table-striped table-dark table-bordered'>
                                          <tr>
-                                           <th>ID</th>
-                                           <th>Name</th>
-                                           <th>Email</th>
-                                           <th>Age</th>
-                                           <th>Department</th>
-                                           <th>Institute</th>
-                                           <th>Gender</th>
-                                           <th>Action</th>
+                                          <th>ID</th>
+                                          <th>Name</th>
+                                          <th>Email</th>
+                                          <th>Age</th>
+                                          <th>Department</th>
+                                          <th>Institute</th>
+                                          <th>Gender</th>
+                                          <th>Action</th>
                                          </tr>
-                                     ";
+                                        ";
 
-                                     if(mysqli_num_rows($res)< 1){
-                                        $output ="<h5 class='text-center' style='font-family:Poppins;'>No New Request</h5>";
-                                     }
+                                    // Check if the query returned any rows
+                                    if (mysqli_num_rows($res) < 1) {
+                                        // If there are no rows, display a message
+                                        $output = "<h5 class='text-center' style='font-family:Poppins;'>No New Request</h5>";
+                                    }
 
-                                     while($row = mysqli_fetch_array($res)){
+                                    // Fetch the rows from the result set as an associative array
+                                    while ($row = mysqli_fetch_assoc($res)) {
+                                        // Store the ID of the doctor in a variable
                                         $user = $row['ID'];
+                                        // Add a row to the table with the data from the database and the Add Doctor button
                                         $output .= "
-                                        <tr>
-                                            <td>" . $row['ID'] . "</td>
-                                            <td>" . $row['Name'] . "</td>
-                                            <td>" . $row['Email'] . "</td>
-                                            <td>" . $row['Age'] . "</td>
-                                            <td>" . $row['Department'] . "</td>
-                                            <td>" . $row['Instituitional_background'] . "</td>
-                                            <td>" . $row['Gender'] . "</td>
-                                            <td style='margin-left:20px;'>
-                                                <a href='admin?user=$user'><button user='$user' class='btn btn-success add'>Add Doctor</button></a>
-                                            </td>";
-                                     }
-                                    $output .="
-                                        </tr>
-                                     </table>";
+                                           <tr>
+                                             <td>" . $user . "</td>
+                                             <td>" . $row['Name'] . "</td>
+                                             <td>" . $row['Email'] . "</td>
+                                             <td>" . $row['Age'] . "</td>
+                                             <td>" . $row['Department'] . "</td>
+                                             <td>" . $row['Instituitional_background'] . "</td>
+                                             <td>" . $row['Gender'] . "</td>
+                                             <td style='margin-left:20px;'>
+                                                <a href='pendingdoctor?user=$user'><button user='$user' class='btn btn-success add'>Add Doctor</button></a>
+                                             </td>
+                                           </tr>
+                                         ";
+                                    }
+                                    // Close the table
+                                    $output .= "</table>";
 
-                                     echo $output;
+                                    // Print the table
+                                    echo $output;
+                                    if (isset($_GET['user'])) {
+                                        // If the parameter is set, store the value in a variable
+                                        $user = $_GET['user'];
 
-                                     if(isset($_GET['ID'])){
-                                        $user = $_GET['ID'];
-
-                                        $query = "UPDATE doctor
-                                                  SET Approved = 1
-                                                  WHERE ID = '$user'";
-                                        mysqli_query($conn,$query);
-                                     }
+                                        // Update the 'Approved' column to 1 for the row with the specified ID
+                                        $query = "UPDATE doctor SET Approved = 1 WHERE ID = '$user'";
+                                        mysqli_query($conn, $query);
+                                    }
                                     ?>
 
                                 </div>
