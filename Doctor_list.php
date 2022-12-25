@@ -61,10 +61,12 @@
     </section>
     <style>
 .card {
-  border: none;
+  border:darkblue;
     border-radius: 10px;
     transition: all 1s;
-    cursor: pointer
+    cursor: pointer;
+    color: #000000;
+    background: #Add8e6;
 }
 
 .card:hover {
@@ -73,19 +75,19 @@
 }
 
 .container {
-  padding: 2px 2px;
+  padding: 5px 5px;
 }
 </style>
 
 <?php
 			include_once("SQL/dbconnect.php");
-			$sql = "SELECT name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1";
+			$sql = "SELECT ID,name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
 <div class="card">
 <div class="container">
-  <h4><?php echo $record['name']; ?></h4>
+<h4><?php echo $record['ID'];?>,&emsp;<?php echo $record['name'];?></h4>
   <p><?php echo $record['department']; ?></p>
   <p><?php echo $record['Instituitional_Background']; ?></p>
   <p><?php echo $record['gender']; ?></p>
@@ -93,7 +95,9 @@
  
   <p class="Contact">Contact Info:<?php echo $record['Phone_number'];?>
           </p>
+          
   
 </div>
 </div>
+<br>
 <?php } ?>

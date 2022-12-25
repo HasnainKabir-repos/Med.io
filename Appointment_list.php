@@ -72,7 +72,9 @@
   border: none;
     border-radius: 10px;
     transition: all 1s;
-    cursor: pointer
+    cursor: pointer;
+    color: #000000;
+    background: #Add8e6;
 }
 
 .card:hover {
@@ -88,17 +90,18 @@
 <?php
 			include_once("SQL/dbconnect.php");
             $ID= $_SESSION['DoctorID'];
-			$sql = "SELECT name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID";
+			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
 <div class="card">
 <div class="container">
   <h4><?php echo $record['date']; ?></h4>
-  <p class="Contact">Name: <?php echo $record['name'];?></p>
+  <p class="Contact">Patient ID: <?php echo $record['ID'];?>,&emsp;Name: <?php echo $record['name'];?></p>
+  
   <p class="Contact">Message: <?php if($record['message']==null){echo 'null';}else{echo $record['message'];};?></p>
-  <p class="Contact">gender: <?php echo $record['gender'];?></p>
-  <p class="Contact">Age: <?php echo $record['age'];?></p>
+  <p class="Contact">Gender: <?php echo $record['gender'];?>,&emsp;Age: <?php echo $record['age'];?></p>
+  
   <p class="Contact">Previous Medical History(if any): <?php if($record['Previous_Medical_History']==null){echo 'null';}else{echo $record['Previous_Medical_History'];};?></p>
   <p class="Contact">Vaccination Status: <?php if($record['Vaccination_Status']==null){echo 'null';}else{echo $record['Vaccination_Status'];};?></p>
  
@@ -107,4 +110,5 @@
   
 </div>
 </div>
+<br>
 <?php } ?>
