@@ -63,16 +63,16 @@
             <ul>
               <li><a class="nav-link scrollto" href="#departments">Show All Departments</a></li>
               <li><a href="#tab-1">Medicine</a></li>
-              <li><a href="#tab-2">Psychiatry</a></li>
-              <li><a href="#tab-3">Cardiology</a></li>
-              <li><a href="#tab-4">General Surgeon</a></li>
-              <li><a href="#tab-5">Neurology</a></li>
-              <li><a href="#tab-6">E.N.T</a></li>
-              <li><a href="#tab-7">Orthopedics</a></li>
-              <li><a href="#tab-8">Gynaecology
+              <li><a href="#tab-2">Eye Care</a></li>
+              <li><a href="#tab-3">Psychiatry</a></li>
+              <li><a href="#tab-4">Cardiology</a></li>
+              <li><a href="#tab-5">General Surgeon</a></li>
+              <li><a href="#tab-6">Neurology</a></li>
+              <li><a href="#tab-7">E.N.T</a></li>
+              <li><a href="#tab-8">Orthopedics</a></li>
+              <li><a href="#tab-9">Gynaecology
               </a></li>
-              <li><a href="#tab-9">Skin and VD</a></li>
-              
+              <li><a href="#tab-10">Skin and VD</a></li>
             </ul>
           </li>
           
