@@ -63,7 +63,9 @@
   border: none;
     border-radius: 10px;
     transition: all 1s;
-    cursor: pointer
+    cursor: pointer;
+    color: #000000;
+    background: #Add8e6;
 }
 
 .card:hover {
@@ -84,7 +86,7 @@
 			?>
 <div class="card">
 <div class="container">
-  <h4><?php echo $record['name']; ?></h4>
+<h4><?php echo $record['ID'];?>,&emsp;<?php echo $record['name'];?></h4>
   <p><?php echo $record['department']; ?></p>
   <p><?php echo $record['Instituitional_Background']; ?></p>
   <p><?php echo $record['gender']; ?></p>
@@ -95,4 +97,5 @@
   
 </div>
 </div>
+<br>
 <?php } ?>
