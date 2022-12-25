@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content = "width-device-width initial-scale=1" >
     <link rel="stylesheet" href="./assets/styles/adminLogin_styles.css">
+    <link rel="icon" href="./assets/images/med-io-img.png">
 
 
     <title>Admin Login Page</title>

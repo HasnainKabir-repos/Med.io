@@ -3,6 +3,7 @@
     <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="./assets/styles/login_styles.css">
+    <link rel="icon" href="./assets/images/med-io-img.png">
         <title>
             Index
         </title>

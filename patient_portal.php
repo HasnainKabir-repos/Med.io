@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content = "width=device-width initial-scale=1" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="icon" href="./assets/images/med-io-img.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -56,7 +57,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="./covid-portal/covid-portal-index.html">Covid-19 Portal</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
           <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctor</a></li>
 
 
@@ -135,7 +136,7 @@
                 <img src="assets/images/stethoscope_icon.png" alt="">
               </i>
               </div>
-              <h4 class="title"><a href="">Department infromation</a></h4>
+              <h4 class="title"><a href="#departments">Department infromation</a></h4>
               <p class="description">
                 We have a range of doctors whom we have divided into various departments. Click the icon to learn mora about departments.
               </p>
@@ -145,7 +146,7 @@
               <div class="icon"><i class="bx bx-services">
                 <img src="assets/images/services_icon.png" alt="">
               </i></div>
-              <h4 class="title"><a href="">Services</a></h4>
+              <h4 class="title"><a href="test_portal.php">Services</a></h4>
               <p class="description">
                 We offer a range of medical services. Click the icon to learn more about our provided services.
               </p>
@@ -231,7 +232,8 @@
           Your appointment has been placed. Please wait for your doctor to be assigned.
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal"
+          onclick="javascript:window.location.href='patient_portal.php';">Close</button>
         </div>
       </div>
     </div>
@@ -250,7 +252,8 @@
           Please fill out all the fields
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal"
+          onclick="javascript:window.location.href='patient_portal.php';">Close</button>
         </div>
       </div>
     </div>

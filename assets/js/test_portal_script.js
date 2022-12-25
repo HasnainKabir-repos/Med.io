@@ -39,6 +39,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log("request = success");
         var modalClose = document.getElementById("successModal").addEventListener('click', function(){
             successModal.hide();
+           
         })
     }
     else if(error_status == 'emptyfields'){

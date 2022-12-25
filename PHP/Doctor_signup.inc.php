@@ -32,7 +32,7 @@ if(isset($_POST["Doctor_signup-submit"])){
     $phone_number=$_POST['Phone_number'];
 
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
-    empty($gender) ||is_null($age) ||empty($place_of_birth)||empty($Instituitional_background)||empty($Department)|| empty($phone_number)){
+    empty($gender) ||is_null($age) ||empty($place_of_birth)||empty($Department)|| empty($phone_number)){
         function_alert("Empty fields");
     }
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
