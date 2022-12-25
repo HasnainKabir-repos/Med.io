@@ -1,4 +1,12 @@
-
+<?php
+    session_start();
+?>
+<?php
+    if(!isset($_SESSION['Doctorloggedin'])){
+      header("Location: ../Med.io/Doctor_login.php");
+    exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang ="en">
     <head>
@@ -55,7 +63,7 @@
         <!--Cover-->
         <section id="cover" class="d-flex align-items-center">
       <div class="container">
-        <h1>Doctor | List</h1>
+        <h1>Apointment | List</h1>
       </div>
     </section>
     <style>
@@ -78,19 +86,22 @@
 
 <?php
 			include_once("SQL/dbconnect.php");
-			$sql = "SELECT name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1";
+            $ID= $_SESSION['DoctorID'];
+			$sql = "SELECT name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
 <div class="card">
 <div class="container">
-  <h4><?php echo $record['name']; ?></h4>
-  <p><?php echo $record['department']; ?></p>
-  <p><?php echo $record['Instituitional_Background']; ?></p>
-  <p><?php echo $record['gender']; ?></p>
-  <p><?php echo $record['age']; ?></p>
+  <h4><?php echo $record['date']; ?></h4>
+  <p class="Contact">Name: <?php echo $record['name'];?></p>
+  <p class="Contact">Message: <?php if($record['message']==null){echo 'null';}else{echo $record['message'];};?></p>
+  <p class="Contact">gender: <?php echo $record['gender'];?></p>
+  <p class="Contact">Age: <?php echo $record['age'];?></p>
+  <p class="Contact">Previous Medical History(if any): <?php if($record['Previous_Medical_History']==null){echo 'null';}else{echo $record['Previous_Medical_History'];};?></p>
+  <p class="Contact">Vaccination Status: <?php if($record['Vaccination_Status']==null){echo 'null';}else{echo $record['Vaccination_Status'];};?></p>
  
-  <p class="Contact">Contact Info:<?php echo $record['Phone_number'];?>
+  <p class="Contact">Contact Info: <?php echo $record['Phone_number'];?>
           </p>
   
 </div>

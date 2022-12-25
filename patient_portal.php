@@ -41,16 +41,17 @@
           <li class="dropdown"><span>Doctor's List</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="Doctor_list.php">All Doctors</a></li>
-              <li><a href="#Medicine">Medicine</a></li>
-              <li><a href="#Psychiatry">Psychiatry</a></li>
-              <li><a href="#tab-3">Cardiology</a></li>
-              <li><a href="#tab-4">General Surgeon</a></li>
-              <li><a href="#tab-5">Neurology</a></li>
-              <li><a href="#tab-6">E.N.T</a></li>
-              <li><a href="#tab-7">Orthopedics</a></li>
-              <li><a href="#tab-8">Gynaecology
+              <li><a href="Medicine_list.php">Medicine</a></li>
+              <li><a href="EyeCare_list.php">Eye Care</a></li>
+              <li><a href="Psychiatry_list.php">Psychiatry</a></li>
+              <li><a href="Cardiology_list.php">Cardiology</a></li>
+              <li><a href="GeneralSurgeon_list.php">General Surgeon</a></li>
+              <li><a href="Neurology_list.php">Neurology</a></li>
+              <li><a href="E.N.T_list.php">E.N.T</a></li>
+              <li><a href="Orthopedics_list.php">Orthopedics</a></li>
+              <li><a href="Gynaecology_list.php">Gynaecology
               </a></li>
-              <li><a href="#tab-9">Skin and VD</a></li>
+              <li><a href="Skin&VD_list.php">Skin and VD</a></li>
               
             </ul>
           </li>

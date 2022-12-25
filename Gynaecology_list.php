@@ -55,7 +55,7 @@
         <!--Cover-->
         <section id="cover" class="d-flex align-items-center">
       <div class="container">
-        <h1>Doctor | List</h1>
+        <h1>Medicine Doctor | List</h1>
       </div>
     </section>
     <style>
@@ -78,7 +78,7 @@
 
 <?php
 			include_once("SQL/dbconnect.php");
-			$sql = "SELECT name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1";
+			$sql = "SELECT name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1 and department='Gynaecology'";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
