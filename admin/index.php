@@ -12,6 +12,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="../assets/images/med-io-img.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
@@ -29,8 +30,8 @@ session_start();
     include("../SQL/dbConnect.php");
     ?>
     <nav class="navbar navbar-expand-lg navbar-info bg-info">
-        <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
-        <h5 class="text-white">Admin Panel</h5>
+        <img src="../assets/images/admin_logo.png" height="40px" width="40px" style="padding:2px;" />
+        <h5 class="text-white">Admin Dashboard</h5>
         <div class="mr-auto"></div>
 
         <ul class="navbar-nav">
@@ -102,7 +103,7 @@ session_start();
                                             <h5 class="text-white">Doctors</h5>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="../admin/doctor.php"><i class="fa fa-solid fa-user-doctor fa-3x my-4" style="color:azure;"></i></i></a>
+                                            <a href="../admin/listeddoctor.php"><i class="fa fa-solid fa-user-doctor fa-3x my-4" style="color:azure;"></i></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -134,12 +135,16 @@ session_start();
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h5 class="my-2 text-white" style="font-size:30px;">0</h5>
-                                            <h5 class="text-white">Total</h5>
-                                            <h5 class="text-white">Reports</h5>
+                                            <?php
+                                            $p = mysqli_query($conn, "SELECT * FROM servicesrequest WHERE Status = 0");
+                                            $pp = mysqli_num_rows($p);
+                                            ?>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"><?php echo $pp; ?></h5>
+                                            <h5 class="text-white">Pending</h5>
+                                            <h5 class="text-white">Test Reports</h5>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="../admin/report.php"><i class="fa fa-solid fa-file-contract fa-3x my-4" style="color:azure;"></i></a>
+                                            <a href="../admin/pendingrep.php"><i class="fa fa-solid fa-file-contract fa-3x my-4" style="color:azure;"></i></a>
 
                                         </div>
                                     </div>
@@ -158,11 +163,11 @@ session_start();
                                             $pp = mysqli_num_rows($p);
                                             ?>
                                             <h5 class="my-2 text-white" style="font-size:30px;"><?php echo $pp; ?></h5>
-                                            <h5 class="text-black">Total</h5>
+                                            <h5 class="text-black">Doctor</h5>
                                             <h5 class="text-black">Requests</h5>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="#"><i class="fa fa-solid fa-people-group fa-3x my-4" style="color:azure;"></i></a>
+                                            <a href="../admin/pendingdoctor.php"><i class="fa fa-solid fa-people-group fa-3x my-4" style="color:azure;"></i></a>
                                         </div>
                                     </div>
                                 </div>

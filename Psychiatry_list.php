@@ -18,6 +18,7 @@
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/card.css">
     <link rel="stylesheet" href="assets/styles/Doctor_portal_styles.css">
+    <link rel="icon" href="./assets/images/med-io-img.png">
     <title>Med.io</title>
     </head>
     <body>

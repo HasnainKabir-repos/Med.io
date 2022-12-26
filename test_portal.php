@@ -9,7 +9,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content = "width=device-width initial-scale=1" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    
+    <link rel="icon" href="./assets/images/med-io-img.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     
@@ -42,7 +42,7 @@ session_start();
             <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
             <li><a class="nav-link scrollto" href="./Doctor_list.php">Doctors</a></li>
 
-            <li class="dropdown"><span>Test and service charges</span> <i class="bi bi-chevron-down"></i></a>
+            <!-- <li class="dropdown"><span>Test and service charges</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <li><a class="nav-link scrollto" href="#services">Choose by category</a></li>
                 <li><a href="#category">Ambulance</a></li>
@@ -61,7 +61,7 @@ session_start();
                 <li><a href="#category">Radiology</a></li>
                 <li><a href="#category">Ultrasound</a></li>
                 </ul>
-            </li>
+            </li> -->
             
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -173,7 +173,8 @@ session_start();
                         Your request has been placed. Please wait for confirmation via email.
                         </div>
                         <div class="modal-footer">
-                        <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal"
+                        onclick="javascript:window.location.href='test_portal.php';">Close</button>
                         </div>
                     </div>
                     </div>
@@ -192,7 +193,8 @@ session_start();
                         Please fill out all the fields
                         </div>
                         <div class="modal-footer">
-                        <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal"
+                        onclick="javascript:window.location.href='test_portal.php';">Close</button>
                         </div>
                     </div>
                     </div>

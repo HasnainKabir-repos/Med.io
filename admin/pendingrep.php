@@ -6,7 +6,7 @@ error_reporting(0);
 <html>
 
 <head>
-    <title>Listed Doctors</title>
+    <title>Pending Test Reports</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/styles/admin_font.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -28,8 +28,8 @@ error_reporting(0);
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/doctor_logo.png" height="40px" width="40px" style="padding:2px;" />
-            <h5 class="text-white">Listed Doctors</h5>
+            <img src="../assets/images/report_logo.png" height="40px" width="40px" style="padding:2px;" />
+            <h5 class="text-white">Pending Test Reports</h5>
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
@@ -59,42 +59,36 @@ error_reporting(0);
                         ?>
                     </div>
                     <div class="col-md-10">
-                        <h4 class="text-center" style="font-family:Poppins;margin-top:25px;">Listed Doctors</h4>
+                        <h4 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Test Reports</h4>
                         <!-- Alert message -->
-                        <div id="add-alert" class="alert alert-danger" style="display:none;">The Doctor is Removed</div>
+                        <div id="add-alert" class="alert alert-success" style="display:none;">The Report is Delivered Successfully !</div>
                         <?php
-                        $query = "SELECT * FROM doctor WHERE Approved = 1";
+                        $query = "SELECT * FROM servicesrequest WHERE Status = 0";
                         $res = mysqli_query($conn, $query);
                         $output = "
                                        <table class='table table-hover table-dark table-bordered'>
                                          <tr>
-                                          <th style='text-align: center;'>ID</th>
-                                          <th style='text-align: center;'>Name</th>
-                                          <th style='text-align: center;'>Email</th>
-                                          <th style='text-align: center;'>Age</th>
-                                          <th style='text-align: center;'>Department</th>
-                                          <th style='text-align: center;'>Institute</th>
-                                          <th style='text-align: center;'>Gender</th>
+                                          <th style='text-align: center;'>Request ID</th>
+                                          <th style='text-align: center;'>Patient ID</th>
+                                          <th style='text-align: center;'>Service Category</th>
+                                          <th style='text-align: center;'>Date of Request</th>
                                           <th style='text-align: center;'>Action</th>
                                          </tr>
                                         ";
                         if (mysqli_num_rows($res) < 1) {
 
-                            $output = "<h5 class='text-center' style='font-family:Poppins;'>No New Request</h5>";
+                            $output = "<h5 class='text-center' style='font-family:Poppins;'>No New Pending Reports</h5>";
                         }
                         while ($row = mysqli_fetch_assoc($res)) {
-                            $user = $row['ID'];
+                            $user = $row['RequestID'];
                             $output .= "
                                            <tr>
                                              <td style='text-align: center;'>" . $user . "</td>
-                                             <td style='text-align: center;'>" . $row['Name'] . "</td>
-                                             <td style='text-align: center;'>" . $row['Email'] . "</td>
-                                             <td style='text-align: center;'>" . $row['Age'] . "</td>
-                                             <td style='text-align: center;'>" . $row['Department'] . "</td>
-                                             <td style='text-align: center;'>" . $row['Instituitional_background'] . "</td>
-                                             <td style='text-align: center;'>" . $row['Gender'] . "</td>
+                                             <td style='text-align: center;'>" . $row['PatientID'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Service'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Date'] . "</td>
                                              <td style='margin-left:20px; text-align:center;'>
-                                                <a href='listeddoctor?user=$user'><button user='$user' class='btn btn-danger add'>Remove Doctor</button></a>
+                                                <a href='pendingrep?user=$user'><button user='$user' class='btn btn-success add'>Mark As Delivered</button></a>
                                              </td>
                                            </tr>
                                          ";
@@ -103,7 +97,7 @@ error_reporting(0);
                         echo $output;
                         if (isset($_GET['user'])) {
                             $user = $_GET['user'];
-                            $query = "UPDATE doctor SET Approved = 0 WHERE ID = '$user'";
+                            $query = "UPDATE servicesrequest SET Status = 1 WHERE RequestID = '$user'";
                             mysqli_query($conn, $query);
                             echo "<script>
                                      var searchParams = new URLSearchParams(location.search);
@@ -111,7 +105,7 @@ error_reporting(0);
                                         document.getElementById('add-alert').style.display = 'block';
                                         setTimeout(function() {
                                           document.getElementById('add-alert').style.display = 'none';
-                                        }, 1000);
+                                        }, 1500);
                                     }
                                   </script>";
                         }

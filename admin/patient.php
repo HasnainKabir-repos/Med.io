@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="../assets/images/med-io-img.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
@@ -26,7 +27,7 @@
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
+            <img src="../assets/images/patient_logo.png" height="40px" width="40px" style="padding:2px;" />
             <h5 class="text-white">Manage Patient</h5>
             <div class="mr-auto"></div>
 
@@ -56,7 +57,7 @@
                     </div>
 
                     <div class="col-md-10">
-                        <h5 class="text-center my-3">Patient List</h5>
+                        <h4 class="text-center my-3">Patient List</h4>
                         <?php
                         $query = "SELECT * FROM patient";
                         $res = mysqli_query($conn,$query);

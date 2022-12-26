@@ -28,7 +28,7 @@ error_reporting(0);
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
+            <img src="../assets/images/doctor_logo2.png" height="40px" width="40px" style="padding:2px;" />
             <h5 class="text-white">Pending Doctor Requests</h5>
             <div class="mr-auto"></div>
 
@@ -59,23 +59,23 @@ error_reporting(0);
                         ?>
                     </div>
                     <div class="col-md-10">
-                        <h5 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h5>
+                        <h4 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h4>
                         <!-- Alert message -->
                         <div id="add-alert" class="alert alert-success" style="display:none;">The Doctor is added</div>
                         <?php
                         $query = "SELECT * FROM doctor WHERE Approved = 0";
                         $res = mysqli_query($conn, $query);
                         $output = "
-                                       <table class='table table-striped table-dark table-bordered'>
+                                       <table class='table table-hover table-dark table-bordered'>
                                          <tr>
-                                          <th>ID</th>
-                                          <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Age</th>
-                                          <th>Department</th>
-                                          <th>Institute</th>
-                                          <th>Gender</th>
-                                          <th>Action</th>
+                                          <th style='text-align: center;'>ID</th>
+                                          <th style='text-align: center;'>Name</th>
+                                          <th style='text-align: center;'>Email</th>
+                                          <th style='text-align: center;'>Age</th>
+                                          <th style='text-align: center;'>Department</th>
+                                          <th style='text-align: center;'>Institute</th>
+                                          <th style='text-align: center;'>Gender</th>
+                                          <th style='text-align: center;'>Action</th>
                                          </tr>
                                         ";
                         if (mysqli_num_rows($res) < 1) {
@@ -86,14 +86,14 @@ error_reporting(0);
                             $user = $row['ID'];
                             $output .= "
                                            <tr>
-                                             <td>" . $user . "</td>
-                                             <td>" . $row['Name'] . "</td>
-                                             <td>" . $row['Email'] . "</td>
-                                             <td>" . $row['Age'] . "</td>
-                                             <td>" . $row['Department'] . "</td>
-                                             <td>" . $row['Instituitional_background'] . "</td>
-                                             <td>" . $row['Gender'] . "</td>
-                                             <td style='margin-left:20px;'>
+                                             <td style='text-align: center;'>" . $user . "</td>
+                                             <td style='text-align: center;'>" . $row['Name'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Email'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Age'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Department'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Instituitional_background'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Gender'] . "</td>
+                                             <td style='margin-left:20px; text-align:center;'>
                                                 <a href='pendingdoctor?user=$user'><button user='$user' class='btn btn-success add'>Add Doctor</button></a>
                                              </td>
                                            </tr>
@@ -111,10 +111,10 @@ error_reporting(0);
                                         document.getElementById('add-alert').style.display = 'block';
                                         setTimeout(function() {
                                           document.getElementById('add-alert').style.display = 'none';
-                                        }, 3000);
+                                        }, 1000);
                                     }
                                   </script>";
-                            }
+                        }
                         ?>
                     </div>
                 </div>

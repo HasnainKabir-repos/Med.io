@@ -9,6 +9,8 @@ error_reporting(0);
 
     <link rel="stylesheet" type="text/css" href="../assets/styles/admin_font.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="../assets/images/med-io-img.png">
+
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -26,8 +28,8 @@ error_reporting(0);
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
-            <h5 class="text-white">Admin Panel</h5>
+            <img src="../assets/images/admin_logo.png" height="40px" width="40px" style ="padding:2px"/>
+            <h5 class="text-white">Admin List</h5>
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
@@ -59,7 +61,7 @@ error_reporting(0);
                     <div class="col-md-10">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6" style = "width:50%; margin: auto;">
                                     <h5 class="text-center" style="font-family:Poppins;margin-top:25px;">All Admin</h5>
 
                                     <?php
@@ -67,9 +69,8 @@ error_reporting(0);
                                      $query = "SELECT * FROM admin WHERE User !='$ad'";
                                      $res = mysqli_query($conn,$query);
                                      $output =
-                                     '<table class="table table-striped table-dark table-bordered">
-                                     <th>Username</th>
-                                     <th style="width:10%;">Action</th>
+                                     '<table class="table table-hover table-dark table-bordered" style="margin: auto; width: 50%;">
+                                     <th style="text-align: center;">Username</th>
                                      <tr>
                                      ';
 
@@ -77,80 +78,19 @@ error_reporting(0);
                                         $output ="<h5 class='text-center' style='font-family:Poppins;'>No New Admin</h5>";
                                      }
 
-                                     while($row = mysqli_fetch_array($res)){
+                                     while($row = mysqli_fetch_assoc($res)){
                                         $user = $row['User'];
                                         $output .="
                                         <tr>
-                                            <td>$user</td>
-                                            <td style='margin-left:20px;'>
-                                                <a href='admin?user=$user'><button user='$user' class='btn btn-danger remove'>Remove</button></a>
-                                            </td>";
+                                            <td style='text-align: center;'>$user</td>";
                                      }
                                      $output .="
                                         </tr>
                                      </table>";
 
                                      echo $output;
+                                    ?>         
 
-                                     if(isset($_GET['user'])){
-                                        $user = $_GET['user'];
-
-                                        $query = "DELETE FROM admin WHERE User='$user'";
-                                        mysqli_query($conn,$query);
-                                     }
-                                    ?>
-            
-
-                                </div>
-                                <div class="col-md-6">
-
-                                <?php
-
-                                if(isset($_POST['add'])){
-                                    $user = $_POST['user'];
-                                    $password = $_POST['password'];
-
-                                    $error = array();
-
-                                    if(empty($user)){
-                                        $error['u'] = "Enter Admin Username!";
-                                    }
-                                    else if(empty($password)){
-                                        $error['u'] = "Enter Admin Password!";
-                                    }
-
-                                    if(count($error)==0){
-                                        $q = "INSERT INTO admin(User,Password) VALUES('$user','$password')";
-                                        $result = mysqli_query($conn,$q);
-                                        header("Location: ../admin/admin.php?insert=success");
-                                    }
-                                }
-
-                                if(isset($error['u'])){
-                                    $er = $error['u'];
-
-                                    $show = "<h6 class='text-center alert alert-danger'>$er</h6>";
-                                }
-                                else{
-                                    $show = "";
-                                }
-                                ?>
-                                    <h5 class="text-center" style="font-family:Poppins;margin-top:25px;"">Add Admin</h5>
-                                    <form method="post" enctype="multipart/form-data">
-                                        <div>
-                                            <?php echo $show; ?>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Username</label>
-                                            <input type="text" name="user" class="form-control" placeholder="Enter Admin Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Enter Admin Password">
-                                        </div>
-                                        <input type="submit" name="add" value="Add New Admin" class="btn btn-info" style="margin-left:200px;">
-                                    </form>
-                                    
                                 </div>
                             </div>
                         </div>
