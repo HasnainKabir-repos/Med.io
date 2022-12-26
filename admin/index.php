@@ -103,7 +103,7 @@ session_start();
                                             <h5 class="text-white">Doctors</h5>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="../admin/doctor.php"><i class="fa fa-solid fa-user-doctor fa-3x my-4" style="color:azure;"></i></i></a>
+                                            <a href="../admin/listeddoctor.php"><i class="fa fa-solid fa-user-doctor fa-3x my-4" style="color:azure;"></i></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ session_start();
                                             <h5 class="text-white">Test Reports</h5>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="../admin/report.php"><i class="fa fa-solid fa-file-contract fa-3x my-4" style="color:azure;"></i></a>
+                                            <a href="../admin/pendingrep.php"><i class="fa fa-solid fa-file-contract fa-3x my-4" style="color:azure;"></i></a>
 
                                         </div>
                                     </div>
@@ -167,7 +167,7 @@ session_start();
                                             <h5 class="text-black">Requests</h5>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="#"><i class="fa fa-solid fa-people-group fa-3x my-4" style="color:azure;"></i></a>
+                                            <a href="../admin/pendingdoctor.php"><i class="fa fa-solid fa-people-group fa-3x my-4" style="color:azure;"></i></a>
                                         </div>
                                     </div>
                                 </div>

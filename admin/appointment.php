@@ -56,7 +56,7 @@ error_reporting(0);
                     </div>
 
                     <div class="col-md-10">
-                        <h5 class="text-center my-3">Appointment List</h5>
+                        <h4 class="text-center my-3">Appointment List</h4>
                         <?php
                         $query = "SELECT * FROM requests";
                         $res = mysqli_query($conn,$query);

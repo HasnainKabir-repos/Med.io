@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="col-md-10">
-                        <h5 class="text-center my-3">Patient List</h5>
+                        <h4 class="text-center my-3">Patient List</h4>
                         <?php
                         $query = "SELECT * FROM patient";
                         $res = mysqli_query($conn,$query);
