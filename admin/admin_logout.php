@@ -1,7 +1,8 @@
 <?php
-    session_destroy();
+  session_start();
+  session_destroy();
 
-    $_SESSION['message'] = "Logged Out Successfully";
-    header("Location: ../admin_login.php");
-    exit();
+  $_SESSION['message'] = "Logged Out Successfully";
+  header("Location: ../admin_login.php");
+  exit();
 ?>

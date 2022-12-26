@@ -12,7 +12,6 @@ error_reporting(0);
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="../assets/images/med-io-img.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
@@ -60,7 +59,7 @@ error_reporting(0);
                         ?>
                     </div>
                     <div class="col-md-10">
-                        <h5 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h5>
+                        <h4 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h4>
                         <!-- Alert message -->
                         <div id="add-alert" class="alert alert-success" style="display:none;">The Doctor is added</div>
                         <?php
@@ -69,14 +68,14 @@ error_reporting(0);
                         $output = "
                                        <table class='table table-striped table-dark table-bordered'>
                                          <tr>
-                                          <th>ID</th>
-                                          <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Age</th>
-                                          <th>Department</th>
-                                          <th>Institute</th>
-                                          <th>Gender</th>
-                                          <th>Action</th>
+                                          <th style='text-align: center;'>ID</th>
+                                          <th style='text-align: center;'>Name</th>
+                                          <th style='text-align: center;'>Email</th>
+                                          <th style='text-align: center;'>Age</th>
+                                          <th style='text-align: center;'>Department</th>
+                                          <th style='text-align: center;'>Institute</th>
+                                          <th style='text-align: center;'>Gender</th>
+                                          <th style='text-align: center;'>Action</th>
                                          </tr>
                                         ";
                         if (mysqli_num_rows($res) < 1) {
@@ -87,14 +86,14 @@ error_reporting(0);
                             $user = $row['ID'];
                             $output .= "
                                            <tr>
-                                             <td>" . $user . "</td>
-                                             <td>" . $row['Name'] . "</td>
-                                             <td>" . $row['Email'] . "</td>
-                                             <td>" . $row['Age'] . "</td>
-                                             <td>" . $row['Department'] . "</td>
-                                             <td>" . $row['Instituitional_background'] . "</td>
-                                             <td>" . $row['Gender'] . "</td>
-                                             <td style='margin-left:20px;'>
+                                             <td style='text-align: center;'>" . $user . "</td>
+                                             <td style='text-align: center;'>" . $row['Name'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Email'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Age'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Department'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Instituitional_background'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Gender'] . "</td>
+                                             <td style='margin-left:20px; text-align:center;'>
                                                 <a href='pendingdoctor?user=$user'><button user='$user' class='btn btn-success add'>Add Doctor</button></a>
                                              </td>
                                            </tr>

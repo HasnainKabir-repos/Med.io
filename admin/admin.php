@@ -79,7 +79,7 @@ error_reporting(0);
                                         $output ="<h5 class='text-center' style='font-family:Poppins;'>No New Admin</h5>";
                                      }
 
-                                     while($row = mysqli_fetch_array($res)){
+                                     while($row = mysqli_fetch_assoc($res)){
                                         $user = $row['User'];
                                         $output .="
                                         <tr>
