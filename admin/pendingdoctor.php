@@ -28,7 +28,7 @@ error_reporting(0);
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
+            <img src="../assets/images/doctor_logo2.png" height="40px" width="40px" style="padding:2px;" />
             <h5 class="text-white">Pending Doctor Requests</h5>
             <div class="mr-auto"></div>
 
@@ -66,7 +66,7 @@ error_reporting(0);
                         $query = "SELECT * FROM doctor WHERE Approved = 0";
                         $res = mysqli_query($conn, $query);
                         $output = "
-                                       <table class='table table-striped table-dark table-bordered'>
+                                       <table class='table table-hover table-dark table-bordered'>
                                          <tr>
                                           <th style='text-align: center;'>ID</th>
                                           <th style='text-align: center;'>Name</th>

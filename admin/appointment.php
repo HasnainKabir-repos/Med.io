@@ -26,7 +26,7 @@ error_reporting(0);
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
+            <img src="../assets/images/appointment_logo.png" height="40px" width="40px" style="padding:2px;" />
             <h5 class="text-white">Manage Appointments</h5>
             <div class="mr-auto"></div>
 
@@ -64,7 +64,7 @@ error_reporting(0);
                         $output ="";
                         $output .= "
 
-                        <table class='table table-striped table-dark table-bordered'>
+                        <table class='table table-hover table-dark table-bordered'>
                           <tr>
                             <th>Request ID</th>
                             <th>Patient ID</th>

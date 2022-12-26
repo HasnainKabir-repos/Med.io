@@ -30,8 +30,8 @@ session_start();
     include("../SQL/dbConnect.php");
     ?>
     <nav class="navbar navbar-expand-lg navbar-info bg-info">
-        <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
-        <h5 class="text-white">Admin Panel</h5>
+        <img src="../assets/images/admin_logo.png" height="40px" width="40px" style="padding:2px;" />
+        <h5 class="text-white">Admin Dashboard</h5>
         <div class="mr-auto"></div>
 
         <ul class="navbar-nav">

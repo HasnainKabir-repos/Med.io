@@ -28,8 +28,8 @@ error_reporting(0);
         include("../SQL/dbConnect.php")
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
-            <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
-            <h5 class="text-white">Admin Panel</h5>
+            <img src="../assets/images/admin_logo.png" height="40px" width="40px" style ="padding:2px"/>
+            <h5 class="text-white">Admin List</h5>
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
@@ -69,7 +69,7 @@ error_reporting(0);
                                      $query = "SELECT * FROM admin WHERE User !='$ad'";
                                      $res = mysqli_query($conn,$query);
                                      $output =
-                                     '<table class="table table-dark table-bordered" style="margin: auto; width: 50%;">
+                                     '<table class="table table-hover table-dark table-bordered" style="margin: auto; width: 50%;">
                                      <th style="text-align: center;">Username</th>
                                      <tr>
                                      ';
