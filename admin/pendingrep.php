@@ -6,7 +6,7 @@ error_reporting(0);
 <html>
 
 <head>
-    <title>Manage Pending Doctor Request</title>
+    <title>Pending Test Reports</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/styles/admin_font.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -29,7 +29,7 @@ error_reporting(0);
         ?>
         <nav class="navbar navbar-expand-lg navbar-info bg-info">
             <img src="../assets/images/admin_logo.png" height="32px" width="32px" style="padding:5px;" />
-            <h5 class="text-white">Pending Doctor Requests</h5>
+            <h5 class="text-white">Pending Test Reports</h5>
             <div class="mr-auto"></div>
 
             <ul class="navbar-nav">
@@ -59,42 +59,36 @@ error_reporting(0);
                         ?>
                     </div>
                     <div class="col-md-10">
-                        <h5 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h5>
+                        <h4 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Test Reports</h4>
                         <!-- Alert message -->
-                        <div id="add-alert" class="alert alert-success" style="display:none;">The Doctor is added</div>
+                        <div id="add-alert" class="alert alert-success" style="display:none;">The Report is Delivered Successfully !</div>
                         <?php
-                        $query = "SELECT * FROM doctor WHERE Approved = 0";
+                        $query = "SELECT * FROM servicesrequest WHERE Status = 0";
                         $res = mysqli_query($conn, $query);
                         $output = "
                                        <table class='table table-striped table-dark table-bordered'>
                                          <tr>
-                                          <th>ID</th>
-                                          <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Age</th>
-                                          <th>Department</th>
-                                          <th>Institute</th>
-                                          <th>Gender</th>
-                                          <th>Action</th>
+                                          <th style='text-align: center;'>Request ID</th>
+                                          <th style='text-align: center;'>Patient ID</th>
+                                          <th style='text-align: center;'>Service Category</th>
+                                          <th style='text-align: center;'>Date of Request</th>
+                                          <th style='text-align: center;'>Action</th>
                                          </tr>
                                         ";
                         if (mysqli_num_rows($res) < 1) {
 
-                            $output = "<h5 class='text-center' style='font-family:Poppins;'>No New Request</h5>";
+                            $output = "<h5 class='text-center' style='font-family:Poppins;'>No New Pending Reports</h5>";
                         }
                         while ($row = mysqli_fetch_assoc($res)) {
-                            $user = $row['ID'];
+                            $user = $row['RequestID'];
                             $output .= "
                                            <tr>
-                                             <td>" . $user . "</td>
-                                             <td>" . $row['Name'] . "</td>
-                                             <td>" . $row['Email'] . "</td>
-                                             <td>" . $row['Age'] . "</td>
-                                             <td>" . $row['Department'] . "</td>
-                                             <td>" . $row['Instituitional_background'] . "</td>
-                                             <td>" . $row['Gender'] . "</td>
-                                             <td style='margin-left:20px;'>
-                                                <a href='pendingdoctor?user=$user'><button user='$user' class='btn btn-success add'>Add Doctor</button></a>
+                                             <td style='text-align: center;'>" . $user . "</td>
+                                             <td style='text-align: center;'>" . $row['PatientID'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Service'] . "</td>
+                                             <td style='text-align: center;'>" . $row['Date'] . "</td>
+                                             <td style='margin-left:20px; text-align:center;'>
+                                                <a href='pendingrep?user=$user'><button user='$user' class='btn btn-success add'>Mark As Delivered</button></a>
                                              </td>
                                            </tr>
                                          ";
@@ -103,7 +97,7 @@ error_reporting(0);
                         echo $output;
                         if (isset($_GET['user'])) {
                             $user = $_GET['user'];
-                            $query = "UPDATE doctor SET Approved = 1 WHERE ID = '$user'";
+                            $query = "UPDATE servicesrequest SET Status = 1 WHERE RequestID = '$user'";
                             mysqli_query($conn, $query);
                             echo "<script>
                                      var searchParams = new URLSearchParams(location.search);
@@ -111,7 +105,7 @@ error_reporting(0);
                                         document.getElementById('add-alert').style.display = 'block';
                                         setTimeout(function() {
                                           document.getElementById('add-alert').style.display = 'none';
-                                        }, 1000);
+                                        }, 1500);
                                     }
                                   </script>";
                         }
@@ -121,4 +115,5 @@ error_reporting(0);
             </div>
         </div>
     </body>
+
 </html>
