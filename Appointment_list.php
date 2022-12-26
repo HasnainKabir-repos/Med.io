@@ -74,6 +74,7 @@
     cursor: pointer;
     color: #000000;
     background: #Add8e6;
+    margin-left: 5%;
 }
 
 .card:hover {

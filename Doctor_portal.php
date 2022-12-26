@@ -112,7 +112,7 @@
           </p>
         
           
-          <a href="#update" class="update-btn" id="update_btn">Update Profile</a>
+          <a href="Doctor_profile_update.php" class="update-btn" id="update_btn">Update Profile</a>
     </section>
       </div>
 
