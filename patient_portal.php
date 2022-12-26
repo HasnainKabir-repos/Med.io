@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content = "width=device-width initial-scale=1" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="icon" href="./assets/images/med-io-img.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -41,21 +42,22 @@
           <li class="dropdown"><span>Doctor's List</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="Doctor_list.php">All Doctors</a></li>
-              <li><a href="#Medicine">Medicine</a></li>
-              <li><a href="#Psychiatry">Psychiatry</a></li>
-              <li><a href="#tab-3">Cardiology</a></li>
-              <li><a href="#tab-4">General Surgeon</a></li>
-              <li><a href="#tab-5">Neurology</a></li>
-              <li><a href="#tab-6">E.N.T</a></li>
-              <li><a href="#tab-7">Orthopedics</a></li>
-              <li><a href="#tab-8">Gynaecology
+              <li><a href="Medicine_list.php">Medicine</a></li>
+              <li><a href="EyeCare_list.php">Eye Care</a></li>
+              <li><a href="Psychiatry_list.php">Psychiatry</a></li>
+              <li><a href="Cardiology_list.php">Cardiology</a></li>
+              <li><a href="GeneralSurgeon_list.php">General Surgeon</a></li>
+              <li><a href="Neurology_list.php">Neurology</a></li>
+              <li><a href="E.N.T_list.php">E.N.T</a></li>
+              <li><a href="Orthopedics_list.php">Orthopedics</a></li>
+              <li><a href="Gynaecology_list.php">Gynaecology
               </a></li>
-              <li><a href="#tab-9">Skin and VD</a></li>
+              <li><a href="Skin&VD_list.php">Skin and VD</a></li>
               
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="./covid-portal/covid-portal-index.html">Covid-19 Portal</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
           <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctor</a></li>
 
 
@@ -63,16 +65,16 @@
             <ul>
               <li><a class="nav-link scrollto" href="#departments">Show All Departments</a></li>
               <li><a href="#tab-1">Medicine</a></li>
-              <li><a href="#tab-2">Psychiatry</a></li>
-              <li><a href="#tab-3">Cardiology</a></li>
-              <li><a href="#tab-4">General Surgeon</a></li>
-              <li><a href="#tab-5">Neurology</a></li>
-              <li><a href="#tab-6">E.N.T</a></li>
-              <li><a href="#tab-7">Orthopedics</a></li>
-              <li><a href="#tab-8">Gynaecology
+              <li><a href="#tab-2">Eye Care</a></li>
+              <li><a href="#tab-3">Psychiatry</a></li>
+              <li><a href="#tab-4">Cardiology</a></li>
+              <li><a href="#tab-5">General Surgeon</a></li>
+              <li><a href="#tab-6">Neurology</a></li>
+              <li><a href="#tab-7">E.N.T</a></li>
+              <li><a href="#tab-8">Orthopedics</a></li>
+              <li><a href="#tab-9">Gynaecology
               </a></li>
-              <li><a href="#tab-9">Skin and VD</a></li>
-              
+              <li><a href="#tab-10">Skin and VD</a></li>
             </ul>
           </li>
           
@@ -134,7 +136,7 @@
                 <img src="assets/images/stethoscope_icon.png" alt="">
               </i>
               </div>
-              <h4 class="title"><a href="">Department infromation</a></h4>
+              <h4 class="title"><a href="#departments">Department infromation</a></h4>
               <p class="description">
                 We have a range of doctors whom we have divided into various departments. Click the icon to learn mora about departments.
               </p>
@@ -144,7 +146,7 @@
               <div class="icon"><i class="bx bx-services">
                 <img src="assets/images/services_icon.png" alt="">
               </i></div>
-              <h4 class="title"><a href="">Services</a></h4>
+              <h4 class="title"><a href="test_portal.php">Services</a></h4>
               <p class="description">
                 We offer a range of medical services. Click the icon to learn more about our provided services.
               </p>
@@ -230,7 +232,8 @@
           Your appointment has been placed. Please wait for your doctor to be assigned.
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal"
+          onclick="javascript:window.location.href='patient_portal.php';">Close</button>
         </div>
       </div>
     </div>
@@ -249,7 +252,8 @@
           Please fill out all the fields
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="closeErrorModal"class="btn btn-secondary" data-dismiss="modal"
+          onclick="javascript:window.location.href='patient_portal.php';">Close</button>
         </div>
       </div>
     </div>

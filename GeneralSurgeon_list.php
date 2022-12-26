@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content = "width=device-width initial-scale=1" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <link rel="icon" href="./assets/images/med-io-img.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -19,6 +18,7 @@
     <!--CSS FILE--->
     <link rel="stylesheet" href="assets/styles/card.css">
     <link rel="stylesheet" href="assets/styles/Doctor_portal_styles.css">
+    <link rel="icon" href="./assets/images/med-io-img.png">
     <title>Med.io</title>
     </head>
     <body>
@@ -56,12 +56,12 @@
         <!--Cover-->
         <section id="cover" class="d-flex align-items-center">
       <div class="container">
-        <h1>Doctor | List</h1>
+        <h1>General Surgeon | List</h1>
       </div>
     </section>
     <style>
 .card {
-  border:darkblue;
+  border: none;
     border-radius: 10px;
     transition: all 1s;
     cursor: pointer;
@@ -75,13 +75,13 @@
 }
 
 .container {
-  padding: 5px 5px;
+  padding: 2px 2px;
 }
 </style>
 
 <?php
 			include_once("SQL/dbconnect.php");
-			$sql = "SELECT ID,name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1";
+			$sql = "SELECT name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1 and department='General Surgeon'";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
@@ -95,7 +95,6 @@
  
   <p class="Contact">Contact Info:<?php echo $record['Phone_number'];?>
           </p>
-          
   
 </div>
 </div>
