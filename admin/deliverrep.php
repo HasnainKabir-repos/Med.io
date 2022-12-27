@@ -36,9 +36,13 @@ error_reporting(0);
                 if (isset($_SESSION['adminUser'])) {
                     $user = $_SESSION['adminUser'];
                     echo '
-                    <li class="nav-item"><a href="#" class="nav-link text-white">' . $user . '</a></li>
-                    <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
-                    ';
+                    <li class="nav-item" style="background-color:  #98FB98; border-radius: 5px; margin-right: 10px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                       <a href="#" class="nav-link" style="color: #000000;">' . $user . '</a>
+                    </li>
+                    <li class="nav-item" style="background-color: #b92e34; border-radius: 5px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                       <a href="/Med.io/admin/admin_logout.php" class="nav-link text-white">Logout</a>
+                    </li>
+                ';
                 }
                 ?>
             </ul>
@@ -57,7 +61,9 @@ error_reporting(0);
                     </div>
 
                     <div class="col-md-10">
-                        <h4 class="text-center my-3">Delivered Test Reports</h4>
+                        <div style="display: inline-block; padding: 10px; background-color:#ADFF2F; border: 2px solid #000000; border-radius: 8px; color: #000000; font-family: Poppins; font-size:20px; font-weight:500; margin-top: 25px; text-align: center; line-height: 1.5; margin-bottom: 20px;">
+                            Delivered Reports
+                        </div>
                         <?php
                         $query = "SELECT * FROM servicesrequest
                                   where Status = 1";

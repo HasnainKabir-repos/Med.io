@@ -39,9 +39,13 @@ session_start();
             if (isset($_SESSION['adminUser'])) {
                 $user = $_SESSION['adminUser'];
                 echo '
-                    <li class="nav-item"><a href="#" class="nav-link text-white">' . $user . '</a></li>
-                    <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
-                    ';
+                    <li class="nav-item" style="background-color:  #98FB98; border-radius: 5px; margin-right: 10px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                       <a href="#" class="nav-link" style="color: #000000;">' . $user . '</a>
+                    </li>
+                    <li class="nav-item" style="background-color: #b92e34; border-radius: 5px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                       <a href="/Med.io/admin/admin_logout.php" class="nav-link text-white">Logout</a>
+                    </li>
+                ';
             }
             ?>
         </ul>

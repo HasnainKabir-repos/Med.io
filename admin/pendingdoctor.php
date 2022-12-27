@@ -37,9 +37,13 @@ error_reporting(0);
                 if (isset($_SESSION['adminUser'])) {
                     $user = $_SESSION['adminUser'];
                     echo '
-                    <li class="nav-item"><a href="#" class="nav-link text-white">' . $user . '</a></li>
-                    <li class="nav-item"><a href="/Med.io/admin_login.php" class="nav-link text-white">Logout</a> </li>
-                    ';
+                    <li class="nav-item" style="background-color:  #98FB98; border-radius: 5px; margin-right: 10px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                       <a href="#" class="nav-link" style="color: #000000;">' . $user . '</a>
+                    </li>
+                    <li class="nav-item" style="background-color: #b92e34; border-radius: 5px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                       <a href="/Med.io/admin/admin_logout.php" class="nav-link text-white">Logout</a>
+                    </li>
+                ';
                 }
                 ?>
             </ul>
@@ -59,9 +63,16 @@ error_reporting(0);
                         ?>
                     </div>
                     <div class="col-md-10">
-                        <h4 class="text-center" style="font-family:Poppins;margin-top:25px;">Pending Doctor Requests</h4>
+                        <div style="display: inline-block; padding: 10px; background-color: #FFDF00; border: 2px solid #000000; border-radius: 8px; color: #000000; font-family: Poppins; font-size:20px; font-weight:500; margin-top: 25px; text-align: center; line-height: 1.5; margin-bottom: 20px;">
+                            Pending Doctor Requests
+                        </div>
                         <!-- Alert message -->
-                        <div id="add-alert" class="alert alert-success" style="display:none;">The Doctor is added</div>
+                        <div id="add-alert" class="alert alert-success" style="display:none;">
+                            Doctor added successfully!
+                        </div>
+                        <div id="delete-alert" class="alert alert-warning" style="display:none;">
+                            Doctor refused!
+                        </div>
                         <?php
                         $query = "SELECT * FROM doctor WHERE Approved = 0";
                         $res = mysqli_query($conn, $query);
@@ -75,6 +86,7 @@ error_reporting(0);
                                           <th style='text-align: center;'>Department</th>
                                           <th style='text-align: center;'>Institute</th>
                                           <th style='text-align: center;'>Gender</th>
+                                          <th style='text-align: center;'>Action</th>
                                           <th style='text-align: center;'>Action</th>
                                          </tr>
                                         ";
@@ -94,7 +106,10 @@ error_reporting(0);
                                              <td style='text-align: center;'>" . $row['Instituitional_background'] . "</td>
                                              <td style='text-align: center;'>" . $row['Gender'] . "</td>
                                              <td style='margin-left:20px; text-align:center;'>
-                                                <a href='pendingdoctor?user=$user'><button user='$user' class='btn btn-success add'>Add Doctor</button></a>
+                                                <a href='pendingdoctor?user=$user&action=add'><button user='$user' class='btn btn-success add'>Add</button></a>
+                                             </td>
+                                             <td style='margin-left:20px; text-align:center;'>
+                                                <a href='pendingdoctor?user=$user&action=delete'><button user='$user' class='btn btn-warning delete'>Refuse</button></a>
                                              </td>
                                            </tr>
                                          ";
@@ -103,9 +118,12 @@ error_reporting(0);
                         echo $output;
                         if (isset($_GET['user'])) {
                             $user = $_GET['user'];
-                            $query = "UPDATE doctor SET Approved = 1 WHERE ID = '$user'";
-                            mysqli_query($conn, $query);
-                            echo "<script>
+                            $action = $_GET['action'];
+
+                            if ($action == 'add') {
+                                $query = "UPDATE doctor SET Approved = 1 WHERE ID = '$user'";
+                                mysqli_query($conn, $query);
+                                echo "<script>
                                      var searchParams = new URLSearchParams(location.search);
                                      if (searchParams.has('user')) {
                                         document.getElementById('add-alert').style.display = 'block';
@@ -114,6 +132,35 @@ error_reporting(0);
                                         }, 1000);
                                     }
                                   </script>";
+                                $query = "SELECT Email FROM doctor WHERE ID = '$user'";
+                                $res = mysqli_query($conn, $query);
+                                $row = mysqli_fetch_assoc($res);
+                                $to = $row['Email'];
+                                $subject = "Doctor Approval";
+                                $message = "Congratulations! Your request to become a doctor has been approved. You can now access the doctor's panel.";
+                                $headers = "From: mahdin.mukit248@gmail.com";
+                                mail($to, $subject, $message, $headers);
+                            } else if ($action == 'delete') {
+                                $query = "DELETE FROM doctor WHERE ID = '$user'";
+                                mysqli_query($conn, $query);
+                                echo "<script>
+                                     var searchParams = new URLSearchParams(location.search);
+                                     if (searchParams.has('user')) {
+                                        document.getElementById('delete-alert').style.display = 'block';
+                                        setTimeout(function() {
+                                          document.getElementById('delete-alert').style.display = 'none';
+                                        }, 1000);
+                                    }
+                                  </script>";
+                                $query = "SELECT Email FROM doctor WHERE ID = '$user'";
+                                $res = mysqli_query($conn, $query);
+                                $row = mysqli_fetch_assoc($res);
+                                $to = $row['Email'];
+                                $subject = "Doctor Approval";
+                                $message = "We are sorry to inform you that your request to become a doctor in our hospital has been declined.";
+                                $headers = "From: mahdin.mukit248@gmail.com";
+                                mail($to, $subject, $message, $headers);
+                            }
                         }
                         ?>
                     </div>
@@ -121,4 +168,5 @@ error_reporting(0);
             </div>
         </div>
     </body>
+
 </html>
