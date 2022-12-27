@@ -68,12 +68,12 @@
     color: #000000;
     background: #Add8e6;
     margin-left: 5%;
-}
-
-.card:hover {
-  -webkit-box-shadow: 3px 5px 17px -4px #777777;
+    text-indent: 50px;
+    -webkit-box-shadow: 3px 5px 17px -4px #777777;
     box-shadow: 3px 5px 17px -4px #777777
 }
+
+
 
 .container {
   padding: 5px 5px;
@@ -88,13 +88,17 @@
 			?>
 <div class="card">
 <div class="container">
-<h4><?php echo $record['ID'];?>,&emsp;<?php echo $record['name'];?></h4>
-  <p><?php echo $record['department']; ?></p>
-  <p><?php echo $record['Instituitional_Background']; ?></p>
-  <p><?php echo $record['gender']; ?></p>
-  <p><?php echo $record['age']; ?></p>
+<h4><?php echo $record['name'];?>,&emsp;<?php echo $record['ID'];?></h4>
+<p class="Contact">Department:&ensp;<?php echo $record['department'];?>
+          </p>
+          <p class="Contact">Institution:&ensp;<?php echo $record['Instituitional_Background'];?>
+          </p>
+          <p class="Contact">Gender:&ensp;<?php echo $record['gender'];?>
+          </p>
+          <p class="Contact">Age:&ensp;<?php echo $record['age'];?>
+          </p>
  
-  <p class="Contact">Contact Info:<?php echo $record['Phone_number'];?>
+  <p class="Contact">Contact Info:&ensp;<?php echo $record['Phone_number'];?>
           </p>
           
   

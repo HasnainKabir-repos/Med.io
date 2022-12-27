@@ -76,12 +76,12 @@
     color: #000000;
     background: #Add8e6;
     margin-left: 5%;
-}
-
-.card:hover {
-  -webkit-box-shadow: 3px 5px 17px -4px #777777;
+    text-indent: 50px;
+    -webkit-box-shadow: 3px 5px 17px -4px #777777;
     box-shadow: 3px 5px 17px -4px #777777
 }
+
+
 
 .container {
   padding: 2px 2px;
