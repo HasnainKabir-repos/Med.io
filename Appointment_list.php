@@ -57,14 +57,14 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
-      <a href="assets/patient_logout.php" class="logout-btn scrollto" id="logout-btn">Logout</a>
+      <a href="assets/Doctor_logout.php" class="logout-btn scrollto" id="logout-btn">Logout</a>
         </div>
     </header>
 
         <!--Cover-->
         <section id="cover" class="d-flex align-items-center">
       <div class="container">
-        <h1>Apointment | List</h1>
+        <h1>Appointment | List</h1>
       </div>
     </section>
     <style>
