@@ -8,7 +8,23 @@ function function_alert($message) {
     // Display the alert box 
     echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/Doctor_portal.php';</script>";
 }
+function checkPassword($pwd) {
+    $message = "";
 
+    if (strlen($pwd) < 8) {
+        $message = "Password too short!";
+    }
+
+    else if (!preg_match("#[0-9]+#", $pwd)) {
+        $message = "Password must include at least one number!";
+    }
+
+    else if (!preg_match("#[a-zA-Z]+#", $pwd)) {
+        $message = "Password must include at least one letter!";
+    }     
+
+    return ($message);
+}
 if(isset($_POST["doctor_password_update-submit"])){
     require "../SQL/dbConnect.php";
 
@@ -19,7 +35,9 @@ if(isset($_POST["doctor_password_update-submit"])){
     if(empty($old_password) || empty($new_password)){
         function_alert("Empty fields password");
     }
-
+    else if(checkPassword($new_password)){
+        function_alert(checkPassword($new_password));
+    }
     else{
         
         $sql = "SELECT * FROM Doctor WHERE ID=?";

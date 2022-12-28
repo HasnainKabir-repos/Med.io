@@ -16,6 +16,24 @@ function calculate_age($dob)
     return $age;
 }
 
+function checkPassword($pwd) {
+    $message = "";
+
+    if (strlen($pwd) < 8) {
+        $message = "Password too short!";
+    }
+
+    else if (!preg_match("#[0-9]+#", $pwd)) {
+        $message = "Password must include at least one number!";
+    }
+
+    else if (!preg_match("#[a-zA-Z]+#", $pwd)) {
+        $message = "Password must include at least one letter!";
+    }     
+
+    return ($message);
+}
+
 if(isset($_POST["signup-submit"])){
     require '../SQL/dbConnect.php';
 
@@ -35,8 +53,12 @@ if(isset($_POST["signup-submit"])){
 
 
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
-    empty($gender) ||empty($age) ||empty($place_of_birth)|| empty($phone_number)){
+    empty($gender) ||is_null($age) ||empty($place_of_birth)|| empty($phone_number)){
         function_alert("Empty fields");
+    }
+
+    else if(checkPassword($password) != ""){
+        function_alert(checkPassword($password));
     }
 
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){

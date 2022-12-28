@@ -16,6 +16,24 @@ function function_alert2($message) {
     // Display the alert box 
     echo "<script type='text/javascript'>alert('$message');window.location.href='http://localhost/Med.io/Doctor_login.php';</script>";
 }
+
+function checkPassword($pwd) {
+    $message = "";
+
+    if (strlen($pwd) < 8) {
+        $message = "Password too short!";
+    }
+
+    else if (!preg_match("#[0-9]+#", $pwd)) {
+        $message = "Password must include at least one number!";
+    }
+
+    else if (!preg_match("#[a-zA-Z]+#", $pwd)) {
+        $message = "Password must include at least one letter!";
+    }     
+
+    return ($message);
+}
 if(isset($_POST["Doctor_signup-submit"])){
     require '../SQL/dbConnect.php';
 
@@ -34,6 +52,9 @@ if(isset($_POST["Doctor_signup-submit"])){
     if(empty($name) ||empty($email) ||empty($password) ||empty($conf_password) ||empty($date_of_birth) ||
     empty($gender) ||is_null($age) ||empty($place_of_birth)||empty($Department)|| empty($phone_number)){
         function_alert("Empty fields");
+    }
+    else if(checkPassword($password)){
+        function_alert(checkPassword($password));
     }
     elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
         function_alert("Incorrect Email format");
