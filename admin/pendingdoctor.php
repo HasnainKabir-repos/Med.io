@@ -58,8 +58,79 @@ error_reporting(0);
                         <!--Side Navigation-->
                         <?php
                         include("./sidenav.php");
-                        include("../SQL/dbConnect.php")
+                        include("../SQL/dbConnect.php");
 
+                        use PHPMailer\PHPMailer\PHPMailer;
+                        use PHPMailer\PHPMailer\Exception;
+
+                        function sendMail($email)
+                        {
+                            require '../PHP/PHPMailer/Exception.php';
+                            require '../PHP/PHPMailer/PHPMailer.php';
+                            require '../PHP/PHPMailer/SMTP.php';
+                            $mail = new PHPMailer(TRUE);
+                            try {
+                                //Server settings
+                                $mail->isSMTP();                                            //Send using SMTP
+                                $mail->Host       = 'smtp-relay.sendinblue.com';                     //Set the SMTP server to send through
+                                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                $mail->Username   = 'med.io021670@gmail.com';                     //SMTP username
+                                $mail->Password   = 'AOHEKdVsnXhb3xqZ';                               //SMTP password
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+                                $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                                //Recipients
+                                $mail->setFrom('med.io021670@gmail.com', 'Med.io');
+                                $mail->addAddress($email);     //Add a recipient
+
+
+                                //Content
+                                $mail->isHTML(true);                                  //Set email format to HTML
+                                $mail->Subject = 'Regarding your request to access the Med.io Doctor Portal';
+                                $mail->Body    = "Dear Concerned Doctor,
+                                <br><br>
+                                Your request to access the Med.io Doctor Portal has been approved.<br><br>
+                                Click on the link below to access the Med.io Doctor Portal<br><br><a href='http://localhost/Med.io/Doctor_login.php'>http://localhost/Med.io/Doctor_login.php</a>";
+                                $mail->send();
+                                echo "<script type='text/javascript'>alert('Mail sent');</script>";
+                            } catch (Exception $e) {
+                                echo "<script type='text/javascript'>alert('Mail could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
+                            }
+                        }
+
+                        function sendMail2($email)
+                        {
+                            require '../PHP/PHPMailer/Exception.php';
+                            require '../PHP/PHPMailer/PHPMailer.php';
+                            require '../PHP/PHPMailer/SMTP.php';
+                            $mail = new PHPMailer(TRUE);
+                            try {
+                                //Server settings
+                                $mail->isSMTP();                                            //Send using SMTP
+                                $mail->Host       = 'smtp-relay.sendinblue.com';                     //Set the SMTP server to send through
+                                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                $mail->Username   = 'med.io021670@gmail.com';                     //SMTP username
+                                $mail->Password   = 'AOHEKdVsnXhb3xqZ';                               //SMTP password
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+                                $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                                //Recipients
+                                $mail->setFrom('med.io021670@gmail.com', 'Med.io');
+                                $mail->addAddress($email);     //Add a recipient
+
+
+                                //Content
+                                $mail->isHTML(true);                                  //Set email format to HTML
+                                $mail->Subject = 'Regarding the refused to request to access Med.io as a doctor';
+                                $mail->Body    = "Dear Concerned Doctor, <br> <br> 
+                                We are sorry to inform you that your request to access Med.io as a doctor has been refused. As we only allow doctors who are registered with the Med.io Hospital, we are unable to grant you access to Med.io. <br> <br>
+                                <br> <br> Regards, <br> Med.io Team";
+                                $mail->send();
+                                echo "<script type='text/javascript'>alert('Mail sent');</script>";
+                            } catch (Exception $e) {
+                                echo "<script type='text/javascript'>alert('Mail could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
+                            }
+                        }
                         ?>
                     </div>
                     <div class="col-md-10">
@@ -122,8 +193,8 @@ error_reporting(0);
 
                             if ($action == 'add') {
                                 $query = "UPDATE doctor SET Approved = 1 WHERE ID = '$user'";
-                                mysqli_query($conn, $query);
-                                echo "<script>
+                                if(mysqli_query($conn, $query)){
+                                 echo "<script>
                                      var searchParams = new URLSearchParams(location.search);
                                      if (searchParams.has('user')) {
                                         document.getElementById('add-alert').style.display = 'block';
@@ -132,17 +203,16 @@ error_reporting(0);
                                         }, 1000);
                                     }
                                   </script>";
-                                $query = "SELECT Email FROM doctor WHERE ID = '$user'";
-                                $res = mysqli_query($conn, $query);
-                                $row = mysqli_fetch_assoc($res);
-                                $to = $row['Email'];
-                                $subject = "Doctor Approval";
-                                $message = "Congratulations! Your request to become a doctor has been approved. You can now access the doctor's panel.";
-                                $headers = "From: mahdin.mukit248@gmail.com";
-                                mail($to, $subject, $message, $headers);
+                                }
+                                $query = "SELECT email FROM doctor WHERE ID = '$user'";
+                                $result = mysqli_query($conn, $query);
+                                $row = mysqli_fetch_assoc($result);
+                                $email = $row['email'];
+                                sendMail($email);
+                                
                             } else if ($action == 'delete') {
                                 $query = "DELETE FROM doctor WHERE ID = '$user'";
-                                mysqli_query($conn, $query);
+                                if(mysqli_query($conn, $query)){
                                 echo "<script>
                                      var searchParams = new URLSearchParams(location.search);
                                      if (searchParams.has('user')) {
@@ -152,14 +222,7 @@ error_reporting(0);
                                         }, 1000);
                                     }
                                   </script>";
-                                $query = "SELECT Email FROM doctor WHERE ID = '$user'";
-                                $res = mysqli_query($conn, $query);
-                                $row = mysqli_fetch_assoc($res);
-                                $to = $row['Email'];
-                                $subject = "Doctor Approval";
-                                $message = "We are sorry to inform you that your request to become a doctor in our hospital has been declined.";
-                                $headers = "From: mahdin.mukit248@gmail.com";
-                                mail($to, $subject, $message, $headers);
+                                }
                             }
                         }
                         ?>

@@ -79,7 +79,7 @@ if(isset($_POST["Doctor_signup-submit"])){
                     mysqli_stmt_bind_param($statement, "ssssssssss", $name, $email, $hashed_password,
                                         $gender, $date_of_birth, $age, $place_of_birth, $Department, $Instituitional_background,$phone_number);
                     mysqli_stmt_execute($statement);
-                    function_alert2("Approval Pending");
+                    function_alert2("Approval Pending, You will be notified via email when your account is approved");
                     
                 }
             }

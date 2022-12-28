@@ -7,7 +7,6 @@ error_reporting(0);
 
 <head>
     <title>Manage Patients</title>
-
     <link rel="stylesheet" type="text/css" href="../assets/styles/admin_font.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
@@ -38,7 +37,7 @@ error_reporting(0);
                 if (isset($_SESSION['adminUser'])) {
                     $user = $_SESSION['adminUser'];
                     echo '
-                    <li class="nav-item" style="background-color:  #98FB98; border-radius: 5px; margin-right: 10px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                    <li class="nav-item" style="background-color: #98FB98; border-radius: 5px; margin-right: 10px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
                        <a href="#" class="nav-link" style="color: #000000;">' . $user . '</a>
                     </li>
                     <li class="nav-item" style="background-color: #b92e34; border-radius: 5px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
