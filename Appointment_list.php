@@ -91,9 +91,12 @@
 <?php
 			include_once("SQL/dbconnect.php");
             $ID= $_SESSION['DoctorID'];
+            date_default_timezone_set('Asia/Dhaka');
+                $date=date("Y-m-d");
 			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
+
 			?>
 <div class="card">
 <div class="container">
@@ -112,4 +115,4 @@
 </div>
 </div>
 <br>
-<?php } ?>
+<?php }?>
