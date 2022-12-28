@@ -30,7 +30,7 @@ session_start();
         <div class="row">
             <div class="col">
                 <div class="label">
-                    <h2>SignUp as a Patient</h2>
+                    <h2 style="color:black;">SignUp as a Patient</h2>
                     <p>Welcome to Med.io, please provide your details to create an account as a patient.</p>
                 </div>
                 <div class="main">

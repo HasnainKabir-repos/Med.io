@@ -88,7 +88,7 @@ if(isset($_POST['test-form-submit'])){
     }else{
 
         $patientID = $_SESSION['patientID'];
-        $sql = "INSERT INTO servicesrequest (Service, PatientID, Date) VALUES (?,?,?)";
+        $sql = "INSERT INTO servicesrequest (Service, PatientID, Date, Status) VALUES (?,?,?,0)";
 
         $statement = mysqli_stmt_init($conn);
 

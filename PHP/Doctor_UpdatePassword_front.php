@@ -15,16 +15,34 @@ $_SESSION['reset_token'] = $params['reset_token'];
 <html>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="icon" href="./assets/images/med-io-img.png">
+    <link rel="stylesheet" href="../assets/styles/login_styles.css">
+    <link rel="stylesheet" href="../assets/styles/admin_font.css">
     <head>
         <title>Update Password</title>
     </head>
     <body>
-    <form class= "Update" action="DoctorupdatePassword.php" method='POST'>
 
-            <label for="password">Password</label><br><br>
-            <input type="password" id = "password" name="password"><br><br>
-            <button type='submit' name='Doctor_update_Password'>Update</button>
-            
-    </form>
+    <div class = "container-fluid">
+        <div class = "center">
+            <div class = "heading">
+                <h3>Update Password</h3>
+            </div>
+
+
+            <div class = "form-content">
+            <form class= "Update" action="DoctorupdatePassword.php" method='POST'>
+                <div class = "placeholders">
+                    <input type="password" id = "password" name="password" placeholder="password"><br><br>
+                </div>
+                
+                <button type='submit' name='Doctor_update_Password'>Update</button>
+                
+            </form>
+            </div>
+
+        </div>
+    </div>
+
+    
     </body>
 </html>

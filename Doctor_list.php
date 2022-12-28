@@ -37,7 +37,7 @@
 
         <div class="container d-flex align-items-center">
             
-            <a href="Doctor_portal.php" class="logo me-auto"><img src="assets/images/med-io-img.png" alt="" class="img-fluid"></a>
+            <a href="patient_portal.php" class="logo me-auto"><img src="assets/images/med-io-img.png" alt="" class="img-fluid"></a>
             
         <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
