@@ -19,11 +19,11 @@ $_SESSION['reset_token'] = $params['reset_token'];
         <title>Update Password</title>
     </head>
     <body>
-    <form class= "Update" action="updatePassword.php" method='POST'>
+    <form class= "Update" action="DoctorupdatePassword.php" method='POST'>
 
             <label for="password">Password</label><br><br>
             <input type="password" id = "password" name="password"><br><br>
-            <button type='submit' name='update_Password'>Update</button>
+            <button type='submit' name='Doctor_update_Password'>Update</button>
             
     </form>
     </body>

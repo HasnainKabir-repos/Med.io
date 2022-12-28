@@ -31,7 +31,7 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Reset Password';
     $mail->Body    = "Click on the Link <br>
-    <a href='http://localhost/Med.io/PHP/UpdatePassword_front.php?key=".$email."&reset_token=".$reset_token."'>Reset Password</a>";
+    <a href='http://localhost/Med.io/PHP/Doctor_UpdatePassword_front.php?key=".$email."&reset_token=".$reset_token."'>Reset Password</a>";
 
    
 
@@ -41,7 +41,7 @@ try {
     echo "<script type='text/javascript'>alert('Mail could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
 }
 }
-if(isset($_POST["recover_password"])){
+if(isset($_POST["Doctor_recover_password"])){
 
 
 
@@ -49,14 +49,14 @@ if(isset($_POST["recover_password"])){
 
 
     if(empty($email)){
-        header("Location: ../Recover_Password.php?error=emptyfields&mail=".$email);
+        header("Location: ../Doctor_RecoverPassword.php?error=emptyfields&mail=".$email);
         exit();
     }
 
                 $reset_token=bin2hex(random_bytes(16));
                 date_default_timezone_set('Asia/Dhaka');
                 $date=date("Y-m-d");
-                $query="UPDATE `patient` SET `resetToken`='$reset_token',`resetTokenExpiry`='$date' where `email`='$email'";
+                $query="UPDATE `doctor` SET `resetToken`='$reset_token',`resetTokenExpiry`='$date' where `email`='$email'";
 
                 if(mysqli_query($conn,$query) )
                 {
