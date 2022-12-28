@@ -51,8 +51,6 @@
         <ul>
           <li><a class="nav-link scrollto" href='admin_login.php'>Admin</a></li>
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#intro">About</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -67,6 +65,20 @@
         <h1>Appointment | List</h1>
       </div>
     </section>
+   <style>
+    .contain h1{
+      margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #2c4964;
+    margin-left: 6%;
+    }
+   </style>
+    <div class="contain">
+<h1>Upcoming Appointments</h1><br>
+</div>
     <style>
 .card {
   border: none;
@@ -89,11 +101,40 @@
 </style>
 
 <?php
+
 			include_once("SQL/dbconnect.php");
             $ID= $_SESSION['DoctorID'];
             date_default_timezone_set('Asia/Dhaka');
                 $date=date("Y-m-d");
-			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID";
+			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID and date>'$date'";
+			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
+			while( $record = mysqli_fetch_assoc($resultset) ) {
+
+			?>
+<div class="card">
+<div class="container">
+  <h4><?php echo $record['date']; ?></h4>
+  <p class="Contact">Patient ID: <?php echo $record['ID'];?>,&emsp;Name: <?php echo $record['name'];?></p>
+  
+  <p class="Contact">Message: <?php if($record['message']==null){echo 'null';}else{echo $record['message'];};?></p>
+  <p class="Contact">Gender: <?php echo $record['gender'];?>,&emsp;Age: <?php echo $record['age'];?></p>
+  
+  <p class="Contact">Previous Medical History(if any): <?php if($record['Previous_Medical_History']==null){echo 'null';}else{echo $record['Previous_Medical_History'];};?></p>
+  <p class="Contact">Vaccination Status: <?php if($record['Vaccination_Status']==null){echo 'null';}else{echo $record['Vaccination_Status'];};?></p>
+ 
+  <p class="Contact">Contact Info: <?php echo $record['Phone_number'];?>
+          </p>
+  
+</div>
+</div>
+<br>
+<?php } ?><br><br>
+<div class="contain">
+<h1>Past Appointments</h1><br>
+</div>
+<?php
+
+			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID and date<'$date'";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 

@@ -51,9 +51,6 @@
         <ul>
           <li><a class="nav-link scrollto" href='admin_login.php'>Admin</a></li>
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#intro">About</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
@@ -72,9 +69,23 @@
         .form-content{
                 margin-left: 5%;
         }
-        .form-content.update-btn{
-                margin-left: 5%;
+        .form-content .update_btn{
+          font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: #2596be;
         }
+        
+       
         
         </style>
 
@@ -104,8 +115,9 @@
               </select>
                 <br>
             <!--Update-->
-                <button type="submit" class="update-btn" name="doctor_profile_update-submit" id ="doctor_profile_update-submit">Update</button><br><br>
             
+                <button type="submit" class="update_btn" name="doctor_profile_update-submit" id ="doctor_profile_update-submit">Update</button><br><br>
+           
             <br><br><br><br>
             </form>
             </div>
@@ -126,9 +138,9 @@
             
             
             <!--Update-->
-                <button type="submit" class="update-btn" name="doctor_password_update-submit" id ="doctor_password_update-submit">Update Password</button><br><br>
+                <button type="submit" class="update_btn" name="doctor_password_update-submit" id ="doctor_password_update-submit">Update Password</button><br><br>
             
-
+                </div>
             </form>
             </div>
 
