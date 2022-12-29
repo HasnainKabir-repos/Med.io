@@ -229,7 +229,7 @@
           <h5 class="modal-title" id="exampleModalLongTitle">Success</h5>
         </div>
         <div class="modal-body">
-          Your appointment has been placed. Please wait for your doctor to be assigned.
+          Your appointment has been placed. Please come to the hospital on your selected date.
         </div>
         <div class="modal-footer">
           <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal"
