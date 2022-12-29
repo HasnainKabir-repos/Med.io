@@ -19,8 +19,46 @@ th {text-align: left;}
 
 
 <?php
-
     session_start();
+    ?>
+    <?php
+    require '../SQL/dbConnect.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+function sendMail($email,$date,$service)
+{
+require '../PHP/PHPMailer/Exception.php';
+require '../PHP/PHPMailer/PHPMailer.php';
+require '../PHP/PHPMailer/SMTP.php';
+$mail=new PHPMailer(TRUE);
+try {
+    //Server settings
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp-relay.sendinblue.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'med.io021670@gmail.com';                     //SMTP username
+    $mail->Password   = 'AOHEKdVsnXhb3xqZ';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('med.io021670@gmail.com', 'Med.io');
+    $mail->addAddress($email);     //Add a recipient
+    
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Test Confiramtion';
+    $mail->Body    = "Please visit on $date for $service";
+
+   
+
+    $mail->send();
+    
+} catch (Exception $e) {
+    echo "<script type='text/javascript'>alert('Mail could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
+}
+}
 
 if(isset($_POST['category'])){
 
@@ -76,6 +114,7 @@ if(isset($_POST['test-form-submit'])){
     $category = $_POST['category'];
     $service = $_POST['serviceName'];
     $date = $_POST['test-date'];
+    $email=$_SESSION['patientEmail'];
 
     if(!(isset($_SESSION['patientloggedin']))){
         header("Location: ../Login.php?error=notloggedin");
@@ -102,7 +141,7 @@ if(isset($_POST['test-form-submit'])){
 
             mysqli_stmt_bind_param($statement, "sss", $service, $patientID, $date);
             mysqli_stmt_execute($statement);
-
+            sendMail($email,$date,$service);
             header("Location: ../test_portal.php?request=success");
             exit();
         }

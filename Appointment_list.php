@@ -49,7 +49,7 @@
             
         <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href='admin_login.php'>Admin</a></li>
+          
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

@@ -34,8 +34,7 @@
             
         <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <!--Admin Portal Added at the Navbar by Mukit-->
-          <li><a class="nav-link scrollto" href='admin_login.php'>Admin</a></li>
+        
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
           <li><a class="nav-link scrollto" href="test_portal.php">Services</a></li>
@@ -58,7 +57,7 @@
           </li>
           <li><a class="nav-link scrollto" href="./covid-portal/covid-portal-index.html">Covid-19 Portal</a></li>
           <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
-          <li><a class="nav-link scrollto" href="Doctor_portal.php">Doctor</a></li>
+          
 
 
           <li class="dropdown"><span>Departments</span> <i class="bi bi-chevron-down"></i></a>
@@ -229,7 +228,7 @@
           <h5 class="modal-title" id="exampleModalLongTitle">Success</h5>
         </div>
         <div class="modal-body">
-          Your appointment has been placed. Please wait for your doctor to be assigned.
+          Your appointment has been placed. Please wait for your email.
         </div>
         <div class="modal-footer">
           <button type="button" id="closeModal"class="btn btn-secondary" data-dismiss="modal"
