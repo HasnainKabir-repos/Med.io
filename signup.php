@@ -100,6 +100,7 @@ session_start();
 
         </div>
     </div>
+    <script src="assets/js/login_and_signup_script.js"></script>
 
 </body>
 
