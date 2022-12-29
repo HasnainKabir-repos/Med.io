@@ -8,6 +8,8 @@
         $date = $_POST["appointment-date"];
         $department = $_POST["department"];
         $message = $_POST["message"];
+        $doctor = $_POST["doctorName"];
+        $doctorID = "";
 
         if(!(isset($_SESSION['patientloggedin']))){
             header("Location: ../Login.php?error=notloggedin");
@@ -19,26 +21,46 @@
             exit();
         }else{
 
-            $patientID = $_SESSION['patientID'];
-            
-            $sql = "INSERT INTO requests (PatientID, date, message, department) VALUES (?,?,?,?)";
+            $sql2 = "SELECT ID FROM doctor WHERE Name=? ";
             $statement = mysqli_stmt_init($conn);
-        
-            if(!mysqli_stmt_prepare($statement, $sql)){
+
+            if(!mysqli_stmt_prepare($statement, $sql2)){
 
                 $err = mysqli_stmt_error($statement);
 
-                header("Location: ../patient_portal.php?error=sqlerror".$err);
+                header("Location: ../patient_portal.php?error=sqlerror2".$err);
                 exit();
-            }
-            else{
+            }else{
 
-                mysqli_stmt_bind_param($statement, "ssss", $patientID, $date, $message, $department);
+                mysqli_stmt_bind_param($statement, "s", $doctor);
                 mysqli_stmt_execute($statement);
 
+                $result_check = mysqli_stmt_get_result($statement);
+                $row = mysqli_fetch_assoc($result_check);
+                $doctorID = $row['ID'];
 
-                header("Location: ../patient_portal.php?appointment=success");
-                exit();
+                $patientID = $_SESSION['patientID'];
+            
+                $sql = "INSERT INTO requests (PatientID, date, message, department, Assigned, DoctorID) VALUES (?,?,?,?, 1, ?)";
+                $statement = mysqli_stmt_init($conn);
+            
+                if(!mysqli_stmt_prepare($statement, $sql)){
+
+                    $err = mysqli_stmt_error($statement);
+
+                    header("Location: ../patient_portal.php?error=sqlerror".$err);
+                    exit();
+                }
+                else{
+
+                    mysqli_stmt_bind_param($statement, "sssss", $patientID, $date, $message, $department, $doctorID);
+                    mysqli_stmt_execute($statement);
+
+
+                    header("Location: ../patient_portal.php?appointment=success");
+                    exit();
+                }
+
             }
 
         }

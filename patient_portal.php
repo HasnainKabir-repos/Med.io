@@ -196,7 +196,7 @@
 
               <div class="col-md-5 form-group mt-2">
                 <label for="doctorName" name= "doctor-label">Choose your desired doctor</label>
-                <select name="doctor" id="doctorName" class="form-select">
+                <select name="doctorName" id="doctorName" class="form-select">
                   <option value="">Select Doctor</option>
                 </select>
               </div>
