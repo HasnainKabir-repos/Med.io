@@ -69,7 +69,8 @@
     margin-left: 5%;
     text-indent: 50px;
     -webkit-box-shadow: 3px 5px 17px -4px #777777;
-    box-shadow: 3px 5px 17px -4px #777777
+    box-shadow: 3px 5px 17px -4px #777777;
+    line-height: 20px;
 }
 
 
@@ -81,13 +82,13 @@
 
 <?php
 			include_once("SQL/dbconnect.php");
-			$sql = "SELECT ID,name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1";
+			$sql = "SELECT ID,name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1 order by name";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
 <div class="card">
 <div class="container">
-<h4><?php echo $record['name'];?>,&emsp;<?php echo $record['ID'];?></h4>
+<h4><?php echo $record['name'];?></h4>
 <p class="Contact">Department:&ensp;<?php echo $record['department'];?>
           </p>
           <p class="Contact">Institution:&ensp;<?php echo $record['Instituitional_Background'];?>
@@ -103,5 +104,5 @@
   
 </div>
 </div>
-<br>
+<br><br>
 <?php } ?>

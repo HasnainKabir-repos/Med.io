@@ -87,7 +87,7 @@
 			?>
 <div class="card">
 <div class="container">
-<h4><?php echo $record['name'];?>,&emsp;<?php echo $record['ID'];?></h4>
+<h4><?php echo $record['name'];?></h4>
 <p class="Contact">Department:&ensp;<?php echo $record['department'];?>
           </p>
           <p class="Contact">Institution:&ensp;<?php echo $record['Instituitional_Background'];?>
