@@ -1,3 +1,6 @@
+<?php
+require "../SQL/dbConnect.php";
+?>
 
 <!DOCTYPE html>
 <html lang ="en">
@@ -7,7 +10,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content = "width=device-width initial-scale=1" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <link rel="icon" href="./assets/images/med-io-img.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -17,8 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
 
     <!--CSS FILE--->
-    
-    <link rel="stylesheet" href="assets/styles/Doctor_portal_styles.css">
+    <link rel="stylesheet" href="../assets/styles/Doctor_portal_styles.css">
     <title>Med.io</title>
     </head>
     <body>
@@ -42,65 +43,25 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto" href='admin_login.php'>Admin</a></li>
-          <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
+          <li><a class="nav-link scrollto active" href="Doctor_portal.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#intro">About</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
-      <a href="assets/patient_logout.php" class="logout-btn scrollto" id="logout-btn">Logout</a>
+      <a href="assets/Doctor_logout.php" class="logout-btn scrollto" id="logout-btn">Logout</a>
         </div>
     </header>
 
         <!--Cover-->
         <section id="cover" class="d-flex align-items-center">
       <div class="container">
-        <h1>Cardiology | List</h1>
+        <h1>Doctor | Dashboard</h1>
+        <a href="#intro" class="btn-My-Profile scrollto">My Profile</a><br>
+        <a href="#appointment" class="btn-My-Profile ">Appointment List</a>
       </div>
     </section>
-    <style>
-.card {
-  border: none;
-    border-radius: 10px;
-    transition: all 1s;
-    cursor: pointer;
-    color: #000000;
-    background: #Add8e6;
-    text-indent: 50px;
-    -webkit-box-shadow: 3px 5px 17px -4px #777777;
-    box-shadow: 3px 5px 17px -4px #777777
-}
 
+    <main id="main">
 
-
-.container {
-  padding: 2px 2px;
-}
-</style>
-
-<?php
-			include_once("SQL/dbconnect.php");
-			$sql = "SELECT ID,name, email, age, gender, Instituitional_Background, department,Phone_number FROM doctor where Approved=1 and department='Cardiology'";
-			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
-			while( $record = mysqli_fetch_assoc($resultset) ) {
-			?>
-<div class="card">
-<div class="container">
-<h4><?php echo $record['name'];?>,&emsp;<?php echo $record['ID'];?></h4>
-<p class="Contact">Department:&ensp;<?php echo $record['department'];?>
-          </p>
-          <p class="Contact">Institution:&ensp;<?php echo $record['Instituitional_Background'];?>
-          </p>
-          <p class="Contact">Gender:&ensp;<?php echo $record['gender'];?>
-          </p>
-          <p class="Contact">Age:&ensp;<?php echo $record['age'];?>
-          </p>
- 
-  <p class="Contact">Contact Info:&ensp;<?php echo $record['Phone_number'];?>
-          </p>
-  
-</div>
-</div>
-<br>
-<?php } ?>

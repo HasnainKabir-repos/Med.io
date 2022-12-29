@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
 
     <!--CSS FILE--->
-    <link rel="stylesheet" href="assets/styles/card.css">
+    
     <link rel="stylesheet" href="assets/styles/Doctor_portal_styles.css">
     <title>Med.io</title>
     </head>
