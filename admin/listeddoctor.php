@@ -118,7 +118,7 @@ error_reporting(0);
                                         document.getElementById('add-alert').style.display = 'block';
                                         setTimeout(function() {
                                           document.getElementById('add-alert').style.display = 'none';
-                                        }, 1000);
+                                        }, 1500);
                                     }
                                   </script>";
                         }
