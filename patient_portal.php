@@ -44,7 +44,7 @@
               <li><a href="Medicine_list.php">Medicine</a></li>
               <li><a href="EyeCare_list.php">Eye Care</a></li>
               <li><a href="Psychiatry_list.php">Psychiatry</a></li>
-              <li><a href="Cardiology_list.php">Cardiology</a></li>
+              <li><a href="Cardiaology_list.php">Cardiology</a></li>
               <li><a href="GeneralSurgeon_list.php">General Surgeon</a></li>
               <li><a href="Neurology_list.php">Neurology</a></li>
               <li><a href="E.N.T_list.php">E.N.T</a></li>

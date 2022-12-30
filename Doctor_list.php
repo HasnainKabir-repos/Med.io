@@ -39,11 +39,26 @@
             <a href="patient_portal.php" class="logo me-auto"><img src="assets/images/med-io-img.png" alt="" class="img-fluid"></a>
             
         <nav id="navbar" class="navbar order-last order-lg-0">
+        <li class="dropdown"><span>Doctor's List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="Doctor_list.php">All Doctors</a></li>
+              <li><a href="Medicine_list.php">Medicine</a></li>
+              <li><a href="EyeCare_list.php">Eye Care</a></li>
+              <li><a href="Psychiatry_list.php">Psychiatry</a></li>
+              <li><a href="Cardiaology_list.php">Cardiology</a></li>
+              <li><a href="GeneralSurgeon_list.php">General Surgeon</a></li>
+              <li><a href="Neurology_list.php">Neurology</a></li>
+              <li><a href="E.N.T_list.php">E.N.T</a></li>
+              <li><a href="Orthopedics_list.php">Orthopedics</a></li>
+              <li><a href="Gynaecology_list.php">Gynaecology
+              </a></li>
+              <li><a href="Skin&VD_list.php">Skin and VD</a></li>
+              
+            </ul>
+          </li>
         <ul>
          
           <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#intro">About</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

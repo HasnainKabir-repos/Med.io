@@ -28,7 +28,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Appointment';
+    $mail->Subject = 'Appointment Confirmation';
     $mail->Body    = "Appointment confirmed on $date with $doctor";
 
    

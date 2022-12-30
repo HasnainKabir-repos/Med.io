@@ -50,7 +50,7 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           
-          <li><a class="nav-link scrollto active" href="patient_portal.php">Home</a></li>
+          <li><a class="nav-link scrollto active" href="Doctor_portal.php">Home</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -81,7 +81,7 @@
 </div>
     <style>
 .card {
-  border: none;
+  border:darkblue;
     border-radius: 10px;
     transition: all 1s;
     cursor: pointer;
@@ -90,7 +90,8 @@
     margin-left: 5%;
     text-indent: 50px;
     -webkit-box-shadow: 3px 5px 17px -4px #777777;
-    box-shadow: 3px 5px 17px -4px #777777
+    box-shadow: 3px 5px 17px -4px #777777;
+    line-height: 20px;
 }
 
 
@@ -106,7 +107,8 @@
             $ID= $_SESSION['DoctorID'];
             date_default_timezone_set('Asia/Dhaka');
                 $date=date("Y-m-d");
-			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID and date>'$date'";
+                $newdate = date("Y-m-d",strtotime ( '-3 day' , strtotime ( $date ) )) ;
+			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID and date>'$date' order by date";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 
@@ -127,14 +129,13 @@
   
 </div>
 </div>
-<br>
-<?php } ?><br><br>
+<br>,<br><?php } ?><br><br>
 <div class="contain">
-<h1>Past Appointments</h1><br>
+<h1>Past Appointments(Last 3 days)</h1><br>
 </div>
 <?php
 
-			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID and date<'$date'";
+			$sql = "SELECT ID,name, age, gender,Phone_number,date,message,Previous_Medical_History,Vaccination_Status FROM requests,patient where DoctorID='$ID' and PatientID=ID and date<'$date' and date>'$newdate' order by date";
 			$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 
@@ -155,5 +156,5 @@
   
 </div>
 </div>
-<br>
+<br><br>
 <?php }?>
