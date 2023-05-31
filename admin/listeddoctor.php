@@ -70,7 +70,7 @@ error_reporting(0);
                         <!-- Alert message -->
                         <div id="add-alert" class="alert alert-danger" style="display:none;">The Doctor is Removed</div>
                         <?php
-                        $query = "SELECT * FROM doctor WHERE Approved = 1";
+                        $query = "SELECT * FROM doctor WHERE Approved = 1 order by department ASC";
                         $res = mysqli_query($conn, $query);
                         $output = "
                                        <table class='table table-hover table-dark table-bordered'>

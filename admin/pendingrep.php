@@ -70,7 +70,7 @@ error_reporting(0);
                         <!-- Alert message -->
                         <div id="add-alert" class="alert alert-success" style="display:none;">The Report is Delivered Successfully !</div>
                         <?php
-                        $query = "SELECT * FROM servicesrequest WHERE Status = 0";
+                        $query = "SELECT * FROM servicesrequest WHERE Status = 0 order by Date ASC";
                         $res = mysqli_query($conn, $query);
                         $output = "
                                        <table class='table table-hover table-dark table-bordered'>

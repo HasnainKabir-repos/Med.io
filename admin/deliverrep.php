@@ -67,7 +67,7 @@ error_reporting(0);
                         </div>
                         <?php
                         $query = "SELECT * FROM servicesrequest
-                                  where Status = 1";
+                                  where Status = 1 order by Date DESC";
                         $res = mysqli_query($conn, $query);
                         $output = "";
                         $output .= "

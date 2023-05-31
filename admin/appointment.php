@@ -66,7 +66,7 @@ error_reporting(0);
                             Appointment List
                         </div>
                         <?php
-                        $query = "SELECT * FROM requests";
+                        $query = "SELECT * FROM requests order by date asc";
                         $res = mysqli_query($conn, $query);
 
                         $output = "";
